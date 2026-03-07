@@ -1,6 +1,7 @@
 import SwiftData
 import Foundation
 
+@MainActor
 final class SwiftDataWateringLogRepository: WateringLogRepository {
     private let modelContext: ModelContext
 

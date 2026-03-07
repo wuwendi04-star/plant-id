@@ -402,7 +402,7 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		"TEMP_16FD2FB4-D9D3-4A9D-B61D-0036BAA3FAEE" /* Resources */ = {
+		"TEMP_A47EA031-594F-4DEB-8FF5-E70FDF52E857" /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);

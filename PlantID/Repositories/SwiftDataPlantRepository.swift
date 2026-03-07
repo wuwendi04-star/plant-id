@@ -1,6 +1,7 @@
 import SwiftData
 import Foundation
 
+@MainActor
 final class SwiftDataPlantRepository: PlantRepository {
     private let modelContext: ModelContext
 

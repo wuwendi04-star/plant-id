@@ -27,7 +27,7 @@ enum BackgroundTaskService {
     private static func handleWateringReminder(task: BGAppRefreshTask) {
         task.expirationHandler = { task.setTaskCompleted(success: false) }
 
-        Task {
+        Task { @MainActor in
             defer { scheduleNextReminder() }
             do {
                 let container = try ModelContainer(for: Plant.self, WateringLog.self, Photo.self)

@@ -57,7 +57,9 @@ struct PlantIDApp: App {
         // plantid://nfc/{tagId}
         guard url.scheme == "plantid", url.host == "nfc" else { return }
         let tagId = url.lastPathComponent
-        guard !tagId.isEmpty else { return }
+        // Validate tag ID is hex (8-32 chars) to prevent path traversal / injection
+        guard !tagId.isEmpty,
+              tagId.range(of: "^[0-9A-Fa-f]{8,32}$", options: .regularExpression) != nil else { return }
         Task { @MainActor in
             let context = modelContainer.mainContext
             let plantRepo = SwiftDataPlantRepository(modelContext: context)

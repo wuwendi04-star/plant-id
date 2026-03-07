@@ -1,6 +1,7 @@
 import SwiftData
 import Foundation
 
+@MainActor
 final class SwiftDataPhotoRepository: PhotoRepository {
     private let modelContext: ModelContext
 

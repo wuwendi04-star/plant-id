@@ -40,7 +40,7 @@ final class NfcService: NSObject {
         error = nil
     }
 
-    private func extractTagId(from tag: NFCNDEFTag) async -> String? {
+    private func extractTagId(from tag: NFCNDEFTag) -> String? {
         switch tag {
         case let iso15693Tag as NFCISO15693Tag:
             return iso15693Tag.identifier.map { String(format: "%02X", $0) }.joined()
@@ -76,40 +76,38 @@ extension NfcService: NFCNDEFReaderSessionDelegate {
                 return
             }
 
-            Task { @MainActor in
-                guard let tagId = await self.extractTagId(from: tag) else {
-                    session.invalidate(errorMessage: "Could not read tag ID")
-                    return
-                }
-
-                self.lastTagId = tagId
-
-                if let uri = self.writeUri {
-                    let uriRecord = NFCNDEFPayload.wellKnownTypeURIPayload(
-                        url: URL(string: "plantid://nfc/\(tagId)")!
-                    ) ?? NFCNDEFPayload(
-                        format: .nfcWellKnown,
-                        type: Data("U".utf8),
-                        identifier: Data(),
-                        payload: Data([0x00]) + Data(uri.utf8)
-                    )
-                    let message = NFCNDEFMessage(records: [uriRecord])
-                    tag.writeNDEF(message) { writeError in
-                        if writeError != nil {
-                            session.invalidate(errorMessage: "Failed to write to tag")
-                        } else {
-                            session.alertMessage = "Tag bound successfully!"
-                            session.invalidate()
-                            self.onTagScanned?(tagId)
-                        }
-                    }
-                } else {
-                    session.alertMessage = "Tag recognized!"
-                    session.invalidate()
-                    self.onTagScanned?(tagId)
-                }
-                self.isScanning = false
+            guard let tagId = self.extractTagId(from: tag) else {
+                session.invalidate(errorMessage: "Could not read tag ID")
+                return
             }
+
+            self.lastTagId = tagId
+
+            if let uri = self.writeUri {
+                let uriRecord = NFCNDEFPayload.wellKnownTypeURIPayload(
+                    url: URL(string: "plantid://nfc/\(tagId)")!
+                ) ?? NFCNDEFPayload(
+                    format: .nfcWellKnown,
+                    type: Data("U".utf8),
+                    identifier: Data(),
+                    payload: Data([0x00]) + Data(uri.utf8)
+                )
+                let message = NFCNDEFMessage(records: [uriRecord])
+                tag.writeNDEF(message) { writeError in
+                    if writeError != nil {
+                        session.invalidate(errorMessage: "Failed to write to tag")
+                    } else {
+                        session.alertMessage = "Tag bound successfully!"
+                        session.invalidate()
+                        self.onTagScanned?(tagId)
+                    }
+                }
+            } else {
+                session.alertMessage = "Tag recognized!"
+                session.invalidate()
+                self.onTagScanned?(tagId)
+            }
+            self.isScanning = false
         }
     }
 

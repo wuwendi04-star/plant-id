@@ -27,28 +27,34 @@ enum BackgroundTaskService {
     private static func handleWateringReminder(task: BGAppRefreshTask) {
         task.expirationHandler = { task.setTaskCompleted(success: false) }
 
-        Task { @MainActor in
-            defer { scheduleNextReminder() }
-            do {
-                let container = try ModelContainer(for: Plant.self, WateringLog.self, Photo.self)
-                let context = ModelContext(container)
-                let plantRepo = SwiftDataPlantRepository(modelContext: context)
-                let wateringRepo = SwiftDataWateringLogRepository(modelContext: context)
+        Task {
+            let success = await performWateringCheck()
+            scheduleNextReminder()
+            task.setTaskCompleted(success: success)
+        }
+    }
 
-                let plants = try plantRepo.getAllAlivePlantsSnapshot()
-                let now = Date()
+    @MainActor
+    private static func performWateringCheck() async -> Bool {
+        do {
+            let container = try ModelContainer(for: Plant.self, WateringLog.self, Photo.self)
+            let context = ModelContext(container)
+            let plantRepo = SwiftDataPlantRepository(modelContext: context)
+            let wateringRepo = SwiftDataWateringLogRepository(modelContext: context)
 
-                for plant in plants {
-                    let last = try wateringRepo.getLastWatering(plantId: plant.id)
-                    let daysSince = last.map { now.daysSince($0.wateredAt) } ?? (plant.wateringIntervalDays + 1)
-                    if daysSince >= plant.wateringIntervalDays {
-                        NotificationService.scheduleWateringReminder(plant: plant, daysSince: daysSince)
-                    }
+            let plants = try plantRepo.getAllAlivePlantsSnapshot()
+            let now = Date()
+
+            for plant in plants {
+                let last = try wateringRepo.getLastWatering(plantId: plant.id)
+                let daysSince = last.map { now.daysSince($0.wateredAt) } ?? (plant.wateringIntervalDays + 1)
+                if daysSince >= plant.wateringIntervalDays {
+                    NotificationService.scheduleWateringReminder(plant: plant, daysSince: daysSince)
                 }
-                task.setTaskCompleted(success: true)
-            } catch {
-                task.setTaskCompleted(success: false)
             }
+            return true
+        } catch {
+            return false
         }
     }
 

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<paths>
-    <!-- 照片存储在 External Files Pictures/plants 目录（app 私有，不需要 READ/WRITE_EXTERNAL_STORAGE 权限） -->
-    <external-files-path
-        name="plant_photos"
-        path="Pictures/plants" />
-</paths>

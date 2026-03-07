@@ -11,7 +11,7 @@ Stage 3: IMPLEMENT → Implement to pass tests (GREEN phase)
 Stage 4: REVIEW    → Use code-reviewer agent on ALL changed files
 Stage 5: FIX       → Fix all CRITICAL and HIGH issues from review
 Stage 6: SECURITY  → Use security-reviewer agent on all changes
-Stage 7: VERIFY    → Run ./gradlew test, confirm 80%+ coverage
+Stage 7: VERIFY    → Run xcodebuild test, confirm 80%+ coverage
 Stage 8: PR        → Create PR with full summary and test plan checklist
 ```
 
@@ -44,7 +44,7 @@ At the start of every session:
 Before ending a session, verify ALL of the following:
 
 - [ ] All TodoWrite tasks are `completed` (none `pending` or `in_progress`)
-- [ ] `./gradlew test` ran successfully (0 failures)
+- [ ] `xcodebuild test` passed (0 failures)
 - [ ] Code review was performed by `code-reviewer` agent
 - [ ] Security review was performed by `security-reviewer` agent
 - [ ] PR was created (or task is explicitly not at PR stage yet, documented in TASK.md)
@@ -66,15 +66,15 @@ Before ending a session, verify ALL of the following:
 
 ## Project Stack
 
-- **Language**: Kotlin (Jetpack Compose, Room, MVVM)
-- **Min SDK**: 24 (Android 7.0), Target SDK: 36
-- **Test framework**: JUnit 4, Espresso, Compose UI Test
-- **Build**: Gradle (Kotlin DSL)
+- **Language**: Swift 6 + SwiftUI
+- **Platform**: iOS 17+
+- **Architecture**: MVVM + Repository pattern, SwiftData, @Observable
+- **Test framework**: Swift Testing (unit) + XCTest (UI)
+- **Build tool**: xcodegen (`project.yml`) → Xcode (`PlantID.xcodeproj`)
 - **Commands**:
-  - Unit tests: `./gradlew test`
-  - Instrumented tests: `./gradlew connectedAndroidTest`
-  - Lint: `./gradlew lint`
-  - Build debug: `./gradlew assembleDebug`
+  - Generate project: `xcodegen generate`
+  - Unit tests: `xcodebuild test -scheme PlantID -destination 'platform=iOS Simulator,name=iPhone 16'`
+  - Build: `xcodebuild build -scheme PlantID -destination 'platform=iOS Simulator,name=iPhone 16'`
 
 ---
 
@@ -82,7 +82,7 @@ Before ending a session, verify ALL of the following:
 
 - **Test coverage**: 80% minimum (unit + integration)
 - **No CRITICAL or HIGH issues** from code-reviewer before PR
-- **No hardcoded secrets** — use `local.properties` or environment variables
+- **No hardcoded secrets** — use environment variables or Keychain
 - **Files**: max 800 lines, prefer 200–400 lines
 - **Functions**: max 50 lines
 - **Immutability**: always return new objects, never mutate state in-place

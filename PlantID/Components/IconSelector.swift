@@ -13,7 +13,7 @@ struct IconSelector: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Plant Icon")
-                .font(AppFonts.headline)
+                .font(AppFonts.headline())
                 .foregroundStyle(AppColors.textPrimary)
 
             LazyVGrid(columns: columns, spacing: 12) {

@@ -82,11 +82,11 @@ struct PhotoLightbox: View {
     private var bottomBar: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(photo.takenAt.formattedYMD)
-                .font(AppFonts.caption)
+                .font(AppFonts.caption())
                 .foregroundStyle(.white.opacity(0.7))
             if !photo.note.isEmpty {
                 Text(photo.note)
-                    .font(AppFonts.body)
+                    .font(AppFonts.body())
                     .foregroundStyle(.white)
             }
         }

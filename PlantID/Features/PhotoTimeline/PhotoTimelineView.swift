@@ -71,10 +71,10 @@ struct PhotoTimelineView: View {
     private func statItem(label: String, value: String) -> some View {
         VStack(spacing: 2) {
             Text(value)
-                .font(AppFonts.headline)
+                .font(AppFonts.headline())
                 .foregroundStyle(AppColors.primary)
             Text(label)
-                .font(AppFonts.caption)
+                .font(AppFonts.caption())
                 .foregroundStyle(AppColors.textSecondary)
         }
         .frame(maxWidth: .infinity)
@@ -87,7 +87,7 @@ struct PhotoTimelineView: View {
                     vm.selectedFilter = filter
                 } label: {
                     Text(filter.rawValue)
-                        .font(AppFonts.body)
+                        .font(AppFonts.body())
                         .fontWeight(vm.selectedFilter == filter ? .semibold : .regular)
                         .foregroundStyle(vm.selectedFilter == filter ? AppColors.primary : AppColors.textSecondary)
                         .frame(maxWidth: .infinity)
@@ -112,7 +112,7 @@ struct PhotoTimelineView: View {
                 .font(.system(size: 56))
                 .foregroundStyle(AppColors.textSecondary.opacity(0.5))
             Text(emptyMessage(for: vm.selectedFilter))
-                .font(AppFonts.body)
+                .font(AppFonts.body())
                 .foregroundStyle(AppColors.textSecondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
@@ -145,7 +145,7 @@ struct PhotoTimelineView: View {
 
     private func monthHeader(date: Date) -> some View {
         Text(date.formattedMonthYear)
-            .font(AppFonts.headline)
+            .font(AppFonts.headline())
             .foregroundStyle(AppColors.textPrimary)
             .padding(.horizontal, 16)
             .padding(.vertical, 10)

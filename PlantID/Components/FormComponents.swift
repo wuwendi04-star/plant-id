@@ -9,12 +9,12 @@ struct FormField: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(label)
-                .font(AppFonts.caption)
+                .font(AppFonts.caption())
                 .foregroundStyle(AppColors.textSecondary)
 
             if isMultiline {
                 TextEditor(text: $text)
-                    .font(AppFonts.body)
+                    .font(AppFonts.body())
                     .frame(minHeight: 80)
                     .padding(10)
                     .background(
@@ -23,7 +23,7 @@ struct FormField: View {
                     )
             } else {
                 TextField(placeholder, text: $text)
-                    .font(AppFonts.body)
+                    .font(AppFonts.body())
                     .padding(12)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
@@ -46,7 +46,7 @@ struct FormSection<Content: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
-                .font(AppFonts.headline)
+                .font(AppFonts.headline())
                 .foregroundStyle(AppColors.textPrimary)
             content
         }
@@ -101,11 +101,11 @@ struct WateringTimeline: View {
     private func logRow(log: WateringLog) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(log.wateredAt.formattedYMD)
-                .font(AppFonts.body)
+                .font(AppFonts.body())
                 .foregroundStyle(AppColors.textPrimary)
             if !log.photoPath.isEmpty {
                 Label("Photo attached", systemImage: "photo")
-                    .font(AppFonts.caption)
+                    .font(AppFonts.caption())
                     .foregroundStyle(AppColors.textSecondary)
             }
         }

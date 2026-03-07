@@ -15,7 +15,7 @@ struct StatusBadge: View {
 
     var body: some View {
         Text(config.text)
-            .font(AppFonts.badge)
+            .font(AppFonts.badge())
             .foregroundStyle(.white)
             .padding(.horizontal, 8)
             .padding(.vertical, 3)
@@ -39,7 +39,7 @@ struct PlantStatusBadge: View {
 
     var body: some View {
         Text(config.text)
-            .font(AppFonts.badge)
+            .font(AppFonts.badge())
             .foregroundStyle(.white)
             .padding(.horizontal, 8)
             .padding(.vertical, 3)

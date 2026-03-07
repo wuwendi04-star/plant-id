@@ -15,17 +15,17 @@ struct NfcSuccessDialog: View {
                 nfcIcon
 
                 Text("NFC Tag Linked!")
-                    .font(AppFonts.title)
+                    .font(AppFonts.title())
                     .foregroundStyle(AppColors.textPrimary)
 
                 Text(message)
-                    .font(AppFonts.body)
+                    .font(AppFonts.body())
                     .foregroundStyle(AppColors.textSecondary)
                     .multilineTextAlignment(.center)
 
                 if !plantName.isEmpty {
                     Text(plantName)
-                        .font(AppFonts.headline)
+                        .font(AppFonts.headline())
                         .foregroundStyle(AppColors.primary)
                 }
 

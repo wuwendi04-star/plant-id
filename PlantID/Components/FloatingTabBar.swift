@@ -33,7 +33,7 @@ struct FloatingTabBar: View {
                 Image(systemName: icon)
                     .font(.system(size: 20))
                 Text(label)
-                    .font(AppFonts.caption)
+                    .font(AppFonts.caption())
             }
             .foregroundStyle(selected == destination ? AppColors.primary : AppColors.textSecondary)
             .frame(minWidth: 60)

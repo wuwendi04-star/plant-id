@@ -15,16 +15,16 @@ struct WateringSuccessDialog: View {
                 successIcon
 
                 Text("Watered!")
-                    .font(AppFonts.title)
+                    .font(AppFonts.title())
                     .foregroundStyle(AppColors.textPrimary)
 
                 Text("\(plantName) has been watered.")
-                    .font(AppFonts.body)
+                    .font(AppFonts.body())
                     .foregroundStyle(AppColors.textSecondary)
                     .multilineTextAlignment(.center)
 
                 Text("Next watering in \(nextWateringDays) day\(nextWateringDays == 1 ? "" : "s")")
-                    .font(AppFonts.body)
+                    .font(AppFonts.body())
                     .foregroundStyle(AppColors.primary)
                     .fontWeight(.medium)
 

@@ -14,13 +14,13 @@ struct PlantCard: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(plant.name)
-                        .font(AppFonts.headline)
+                        .font(AppFonts.headline())
                         .foregroundStyle(AppColors.textPrimary)
                         .lineLimit(1)
 
                     if !plant.species.isEmpty {
                         Text(plant.species)
-                            .font(AppFonts.caption)
+                            .font(AppFonts.caption())
                             .foregroundStyle(AppColors.textSecondary)
                             .lineLimit(1)
                     }
@@ -50,16 +50,16 @@ struct PlantCard_Archived: View {
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(plant.name)
-                        .font(AppFonts.headline)
+                        .font(AppFonts.headline())
                         .foregroundStyle(AppColors.textPrimary)
                     if !plant.species.isEmpty {
                         Text(plant.species)
-                            .font(AppFonts.caption)
+                            .font(AppFonts.caption())
                             .foregroundStyle(AppColors.textSecondary)
                     }
                     if let archived = plant.archivedAt {
                         Text("Archived \(archived.formattedYMD)")
-                            .font(AppFonts.caption)
+                            .font(AppFonts.caption())
                             .foregroundStyle(AppColors.textSecondary)
                     }
                 }

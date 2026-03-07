@@ -17,11 +17,11 @@ struct WaterConfirmSheet: View {
                     .padding(.top, 8)
 
                 Text("Water \(plantName)?")
-                    .font(AppFonts.title)
+                    .font(AppFonts.title())
                     .foregroundStyle(AppColors.textPrimary)
 
                 Text("Record a watering session for this plant.")
-                    .font(AppFonts.body)
+                    .font(AppFonts.body())
                     .foregroundStyle(AppColors.textSecondary)
                     .multilineTextAlignment(.center)
 
@@ -46,7 +46,7 @@ struct WaterConfirmSheet: View {
 
                     Button("Cancel", action: onDismiss)
                         .foregroundStyle(AppColors.textSecondary)
-                        .font(AppFonts.body)
+                        .font(AppFonts.body())
                         .padding(.top, 4)
                 }
             }

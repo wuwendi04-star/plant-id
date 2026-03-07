@@ -7,6 +7,10 @@
     <uses-permission android:name="android.permission.NFC" />
     <!-- 推送通知权限（Android 13+ / API 33+） -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- 声明相机为可选特性（允许无相机的设备安装） -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
     <!-- 声明 NFC 为可选特性（允许无 NFC 的设备安装） -->
     <uses-feature
         android:name="android.hardware.nfc"

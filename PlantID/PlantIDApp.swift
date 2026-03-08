@@ -7,6 +7,8 @@ struct PlantIDApp: App {
     @State private var router = AppRouter()
     @State private var nfcService = NfcService()
     @State private var nfcViewModel: NfcScanViewModel?
+    @State private var languageManager = LanguageManager()
+    @State private var appearanceManager = AppearanceManager()
 
     let modelContainer: ModelContainer
 
@@ -25,6 +27,10 @@ struct PlantIDApp: App {
                 .modelContainer(modelContainer)
                 .environment(router)
                 .environment(nfcService)
+                .environment(languageManager)
+                .environment(appearanceManager)
+                .environment(\.locale, languageManager.locale)
+                .preferredColorScheme(appearanceManager.colorScheme)
                 .task {
                     await setupApp()
                 }
@@ -39,11 +45,15 @@ struct PlantIDApp: App {
         }
     }
 
+    @MainActor
     private func setupApp() async {
-        // Request notification permission and schedule daily reminder
+        // Request notification permission and schedule daily reminder if enabled
+        let notificationsEnabled = UserDefaults.standard.object(forKey: "notifications_enabled") as? Bool ?? true
         let granted = await NotificationService.requestPermission()
-        if granted {
-            NotificationService.scheduleDailyReminder()
+        if granted && notificationsEnabled {
+            let hour = UserDefaults.standard.object(forKey: "reminder_hour") as? Int ?? 8
+            let minute = UserDefaults.standard.object(forKey: "reminder_minute") as? Int ?? 0
+            NotificationService.scheduleDailyReminder(hour: hour, minute: minute)
             BackgroundTaskService.scheduleNextReminder()
         }
 

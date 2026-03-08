@@ -36,10 +36,10 @@ enum NotificationService {
         UNUserNotificationCenter.current().add(request)
     }
 
-    static func scheduleDailyReminder() {
+    static func scheduleDailyReminder(hour: Int = 8, minute: Int = 0) {
         var components = DateComponents()
-        components.hour = 8
-        components.minute = 0
+        components.hour = hour
+        components.minute = minute
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
         let content = UNMutableNotificationContent()
         content.title = "Plant care reminder"

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State private var showSettings = false
     @State private var showFAQ = false
     @State private var showAbout = false
 
@@ -14,6 +15,12 @@ struct ProfileView: View {
                         .foregroundStyle(AppColors.textPrimary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, 16)
+
+                    menuCard(
+                        icon: "gearshape",
+                        title: "Settings",
+                        subtitle: "Language, notifications, appearance"
+                    ) { showSettings = true }
 
                     menuCard(
                         icon: "questionmark.circle",
@@ -32,6 +39,7 @@ struct ProfileView: View {
             }
         }
         .navigationBarHidden(true)
+        .sheet(isPresented: $showSettings) { SettingsView() }
         .sheet(isPresented: $showFAQ) { FAQSheet() }
         .sheet(isPresented: $showAbout) { AboutSheet() }
     }

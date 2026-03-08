@@ -13,8 +13,10 @@
 		146D64B4EA787EBA96996B82 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6AF93F840FD0583FF9624 /* Plant.swift */; };
 		1757958A72D0C0CCA80359FA /* EditPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7059D53C36A612B0FC5CC77 /* EditPlantViewModel.swift */; };
 		1970B18D72849996B3B6A698 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACC7328A1E0089B245D797 /* PhotoRepository.swift */; };
+		1C794299BB87F1385FE9C722 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45DC4197A34C60B9A8C1B432 /* Localizable.strings */; };
 		1DCDFAD8DED07087883DA547 /* PlantRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359FDDBE500F743307968F6 /* PlantRepositoryTests.swift */; };
 		2634A9F3F99F5D069388D8AD /* PlantIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C739C720FCC2D1D8A2FD8C5 /* PlantIllustration.swift */; };
+		271A0D549E7493760B0B67A5 /* LanguageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0E74E4DE3D8DE3E2BA73B /* LanguageManagerTests.swift */; };
 		27D7D4FB0446521836BD369A /* SwiftDataWateringLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB70ED4E11147AF2E3921FD /* SwiftDataWateringLogRepository.swift */; };
 		2D896219DC7C756196CF4AE3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC6FB2D722770E3BC2F45B /* AppColors.swift */; };
 		3163786F63E2BD437375BEC4 /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0463B0ABD30C6A95504D995 /* FloatingTabBar.swift */; };
@@ -56,6 +58,7 @@
 		B8E311C0C43EA32DFF1AE325 /* SwiftDataPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C25B0BA6E02A18B9E7392 /* SwiftDataPhotoRepository.swift */; };
 		BB053804EF4504AD8D094F18 /* NfcScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED34A80B79C4D0A1EC828 /* NfcScanView.swift */; };
 		CF07AD1545BDFCB91A60C7BD /* CreatePlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18B74282D9FBF0CE083288 /* CreatePlantViewModel.swift */; };
+		D38CAD74DF27729FD140A29B /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EAB8B733CBBE358649F680 /* AppearanceManager.swift */; };
 		D442F55A953FDBEA0035340A /* WateringLogRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F26B62058968E81BF75FB /* WateringLogRepositoryTests.swift */; };
 		D61F3826FE0A4163581819C7 /* PhotoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ACC9CA29791FEF9D3A5F1B /* PhotoRepositoryTests.swift */; };
 		D693B9933A153F8ED79FFB82 /* PhotoTimelineViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E2882C45692BA49394FF2C /* PhotoTimelineViewModelTests.swift */; };
@@ -63,9 +66,12 @@
 		DE2BF8573F5A0B71F418D3AC /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4480B99AB6963B91C446EC /* AppFonts.swift */; };
 		E02BC0731DC834676AFC5B44 /* PlantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09E38462D102C18E620F633 /* PlantCard.swift */; };
 		E42196BAFC7C128DDFFE21C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75F8C7232AEC8A7261DB94 /* ContentView.swift */; };
+		EC6AE4067C176CAE2E64740D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADEEA371D80738A6966D194 /* SettingsView.swift */; };
 		EC6C71AE3F2E62AD4E46F616 /* CareViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C712F223AEBDB13F404DC5A2 /* CareViewModelTests.swift */; };
+		ED1E29CE78DF8911BD000700 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E5EC555D0294D754F83DD /* LanguageManager.swift */; };
 		F01F48215FA24ED5EF947ED0 /* IconSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79488D2BA632C716E249D68 /* IconSelector.swift */; };
 		F0820941CD109A447CE69809 /* FormComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697332C330E18192FDAFAE4 /* FormComponents.swift */; };
+		F24E8A08A1B68FBF2BFFD20A /* AppearanceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576506C8126BAE07362765B /* AppearanceManagerTests.swift */; };
 		F80F9D979D3C9C2AFB28711E /* TabDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A4C64EF360026AEE869C41 /* TabDestination.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +106,7 @@
 		2C746B256BA5DD33A7A42DDF /* CareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareViewModel.swift; sourceTree = "<group>"; };
 		34F6299155E7313EF2BE88D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		35ABD3A7390F755EAF415BAD /* PhotoTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTimelineView.swift; sourceTree = "<group>"; };
+		39EAB8B733CBBE358649F680 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
 		3BFDF837D5562F26F2ABE22F /* PhotoTimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTimelineViewModel.swift; sourceTree = "<group>"; };
 		3D49823BE92C61791DFB997B /* SeedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataService.swift; sourceTree = "<group>"; };
 		408460094EBC63CAAA85362E /* PlantID.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PlantID.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +114,7 @@
 		493FADE25EFF7B7EDFA8D3AC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		4C5CAE85DBD2A0D21C006A33 /* NfcService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcService.swift; sourceTree = "<group>"; };
 		4C739C720FCC2D1D8A2FD8C5 /* PlantIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIllustration.swift; sourceTree = "<group>"; };
+		5ADEEA371D80738A6966D194 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5DF1D7C2F862D50A689B1458 /* SwiftDataPlantRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataPlantRepository.swift; sourceTree = "<group>"; };
 		62AC7233715312AE21429A42 /* NfcScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcScanViewModel.swift; sourceTree = "<group>"; };
 		687CDBD177E4E24D2E926698 /* PlantIDUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlantIDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,9 +127,11 @@
 		80F8ABFE099F68C086048F99 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		8114CC94F5653BC0B9073AA5 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		8359FDDBE500F743307968F6 /* PlantRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepositoryTests.swift; sourceTree = "<group>"; };
+		8576506C8126BAE07362765B /* AppearanceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceManagerTests.swift; sourceTree = "<group>"; };
 		86DF2F451306051879FB9C2D /* AppGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGradients.swift; sourceTree = "<group>"; };
 		8C30ADB40DBCF0758226585A /* PlantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewModel.swift; sourceTree = "<group>"; };
 		90DF0E78B88BACE350043690 /* PlantIDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIDUITests.swift; sourceTree = "<group>"; };
+		9157E1792B934205A2DB5C7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94BBA5DA104F3809BE780463 /* CreatePlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlantView.swift; sourceTree = "<group>"; };
 		974EB0189C19E5A7C9E7A879 /* CreatePlantViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlantViewModelTests.swift; sourceTree = "<group>"; };
 		988022B74015336214982383 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -146,12 +156,15 @@
 		D7059D53C36A612B0FC5CC77 /* EditPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantViewModel.swift; sourceTree = "<group>"; };
 		DF65384AA7BE493CA4FE3AB1 /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
 		E09E38462D102C18E620F633 /* PlantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCard.swift; sourceTree = "<group>"; };
+		E33AACDEFE02F9DC5B3A7C5D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EA181179C6570662ECEC2DD5 /* BackgroundTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskService.swift; sourceTree = "<group>"; };
 		EFB70ED4E11147AF2E3921FD /* SwiftDataWateringLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataWateringLogRepository.swift; sourceTree = "<group>"; };
+		EFC0E74E4DE3D8DE3E2BA73B /* LanguageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManagerTests.swift; sourceTree = "<group>"; };
 		F09339E6FA097356C7061574 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F1A26DBC0F0B70D7B33ED8E0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F72328EBCEC20B203EC5B595 /* PhotoStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStorageService.swift; sourceTree = "<group>"; };
 		F79488D2BA632C716E249D68 /* IconSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelector.swift; sourceTree = "<group>"; };
+		FA4E5EC555D0294D754F83DD /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -241,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				B707F20D96333FBDEAEE2DB3 /* Repositories */,
+				A747533C320EB686E96126FC /* Services */,
 				2AF48C7F23765DCF4442FB6F /* ViewModels */,
 			);
 			path = PlantIDTests;
@@ -269,6 +283,7 @@
 				3CFB7AEA2BDFADF7DAE68028 /* Models */,
 				DF59245FE92D3DE311236E39 /* Navigation */,
 				0A6726BAC5A4A98A81AEEA9E /* Repositories */,
+				9E0A7D649D491D019EF9534C /* Resources */,
 				B9F4185A3E3122933AA3B851 /* Services */,
 				1E5114131301A3C609FF9A02 /* Theme */,
 			);
@@ -352,6 +367,23 @@
 			path = PlantIDUITests;
 			sourceTree = "<group>";
 		};
+		9E0A7D649D491D019EF9534C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45DC4197A34C60B9A8C1B432 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A747533C320EB686E96126FC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8576506C8126BAE07362765B /* AppearanceManagerTests.swift */,
+				EFC0E74E4DE3D8DE3E2BA73B /* LanguageManagerTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B707F20D96333FBDEAEE2DB3 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,8 +397,10 @@
 		B9F4185A3E3122933AA3B851 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				39EAB8B733CBBE358649F680 /* AppearanceManager.swift */,
 				EA181179C6570662ECEC2DD5 /* BackgroundTaskService.swift */,
 				12FBCB82F2896685BEAC4F4A /* CameraService.swift */,
+				FA4E5EC555D0294D754F83DD /* LanguageManager.swift */,
 				4C5CAE85DBD2A0D21C006A33 /* NfcService.swift */,
 				79C80A6FC74C5DC31A1D70AA /* NotificationService.swift */,
 				F72328EBCEC20B203EC5B595 /* PhotoStorageService.swift */,
@@ -398,15 +432,9 @@
 			isa = PBXGroup;
 			children = (
 				F1A26DBC0F0B70D7B33ED8E0 /* ProfileView.swift */,
+				5ADEEA371D80738A6966D194 /* SettingsView.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		"TEMP_A47EA031-594F-4DEB-8FF5-E70FDF52E857" /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +481,7 @@
 			buildConfigurationList = AD093A950176997A99E875ED /* Build configuration list for PBXNativeTarget "PlantID" */;
 			buildPhases = (
 				81ECD5B34A5D9AFD50D4C5DA /* Sources */,
+				0F54986F4C386082D803ECEC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -489,6 +518,7 @@
 			knownRegions = (
 				Base,
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 17FA07B06FB872AF0ED28BF1;
 			minimizedProjectReferenceProxies = 1;
@@ -504,14 +534,27 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0F54986F4C386082D803ECEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C794299BB87F1385FE9C722 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6F1321FDD16640AF25B3AA2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24E8A08A1B68FBF2BFFD20A /* AppearanceManagerTests.swift in Sources */,
 				EC6C71AE3F2E62AD4E46F616 /* CareViewModelTests.swift in Sources */,
 				A341F76B509E6C5C24ABFA8E /* CreatePlantViewModelTests.swift in Sources */,
 				71DE0A7513AE23E999E5DE7E /* HomeViewModelTests.swift in Sources */,
+				271A0D549E7493760B0B67A5 /* LanguageManagerTests.swift in Sources */,
 				D61F3826FE0A4163581819C7 /* PhotoRepositoryTests.swift in Sources */,
 				D693B9933A153F8ED79FFB82 /* PhotoTimelineViewModelTests.swift in Sources */,
 				4D647A6EC9A97A087464E0DA /* PlantDetailViewModelTests.swift in Sources */,
@@ -529,6 +572,7 @@
 				DE2BF8573F5A0B71F418D3AC /* AppFonts.swift in Sources */,
 				4640AE2F6574AF1E5A162322 /* AppGradients.swift in Sources */,
 				B4F695CD53C539019DE617E4 /* AppRouter.swift in Sources */,
+				D38CAD74DF27729FD140A29B /* AppearanceManager.swift in Sources */,
 				3A74178C6BD2B5D6E7579080 /* BackgroundTaskService.swift in Sources */,
 				46602DA2A40B4D4D636EFF41 /* CameraService.swift in Sources */,
 				966376A9E253422CD08E8B18 /* CareView.swift in Sources */,
@@ -545,6 +589,7 @@
 				464348B5C11DBF40DF5562E0 /* HomeView.swift in Sources */,
 				6DE5943412575F2E49B04E42 /* HomeViewModel.swift in Sources */,
 				F01F48215FA24ED5EF947ED0 /* IconSelector.swift in Sources */,
+				ED1E29CE78DF8911BD000700 /* LanguageManager.swift in Sources */,
 				BB053804EF4504AD8D094F18 /* NfcScanView.swift in Sources */,
 				5F4A0EE0EFFA5EF551CFC958 /* NfcScanViewModel.swift in Sources */,
 				4518C578908C3275DC32A9FD /* NfcService.swift in Sources */,
@@ -565,6 +610,7 @@
 				6B1CE27A35AF7C49818CC4E8 /* PlantRepository.swift in Sources */,
 				7E98071796BEF1EEB740B7D0 /* ProfileView.swift in Sources */,
 				A9312EAF746C533332F16AC0 /* SeedDataService.swift in Sources */,
+				EC6AE4067C176CAE2E64740D /* SettingsView.swift in Sources */,
 				7381A010AB98443B58826057 /* StatusBadge.swift in Sources */,
 				B8E311C0C43EA32DFF1AE325 /* SwiftDataPhotoRepository.swift in Sources */,
 				AC0BE05B633D0FC12B00C77F /* SwiftDataPlantRepository.swift in Sources */,
@@ -600,6 +646,18 @@
 			targetProxy = 3413AF4EAD2DAC3E043579B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45DC4197A34C60B9A8C1B432 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9157E1792B934205A2DB5C7C /* en */,
+				E33AACDEFE02F9DC5B3A7C5D /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		10A6A2523B1AA4AB1BF137DF /* Debug */ = {
@@ -669,6 +727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -706,6 +765,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -723,6 +783,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -740,6 +801,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

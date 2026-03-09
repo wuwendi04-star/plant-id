@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
 
         // 初始化 NFC 适配器和 ViewModel
         nfcAdapter = NfcAdapter.getDefaultAdapter(this)
-        nfcViewModel = ViewModelProvider(this)[NfcViewModel::class.java]
+        nfcViewModel = ViewModelProvider(this, NfcViewModel.factory(application))[NfcViewModel::class.java]
 
         enableEdgeToEdge()
 

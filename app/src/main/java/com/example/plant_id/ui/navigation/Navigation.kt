@@ -56,6 +56,7 @@ import com.example.plant_id.ui.theme.NavBg
 import com.example.plant_id.ui.viewmodel.HomeViewModel
 import com.example.plant_id.ui.viewmodel.NfcNavEvent
 import com.example.plant_id.ui.viewmodel.NfcViewModel
+import android.app.Application
 import kotlinx.coroutines.flow.first
 
 /** 底部导航三个 Tab 的路由定义 */
@@ -86,8 +87,9 @@ fun MainNavigation() {
     // 监听 NFC / 通知深链接导航事件
     // LaunchedEffect(Unit) 只随首次 Compose 启动一次，用 snapshotFlow 持续收集 navEvent
     // 关键优势：snapshotFlow 始终先发射当前值，即使事件在 LaunchedEffect 启动前已设置也不会遗漏
-    val nfcVm: NfcViewModel = viewModel()
-    val homeVm: HomeViewModel = viewModel()
+    val application = LocalContext.current.applicationContext as Application
+    val nfcVm: NfcViewModel = viewModel(factory = NfcViewModel.factory(application))
+    val homeVm: HomeViewModel = viewModel(factory = HomeViewModel.factory(application))
     val context = LocalContext.current
     LaunchedEffect(Unit) {
         // Step 1：等待 NavController 的首个 back stack entry 出现（首页渲染完毕）

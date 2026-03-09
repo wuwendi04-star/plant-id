@@ -37,6 +37,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.app.Application
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.plant_id.ui.components.DatePickerField
 import com.example.plant_id.ui.components.FormActionButtons
@@ -75,7 +77,9 @@ fun EditPlantScreen(
     onSaved: () -> Unit = onBack,
     onArchived: () -> Unit = onBack
 ) {
-    val vm: CreatePlantViewModel = viewModel()
+    val vm: CreatePlantViewModel = viewModel(
+        factory = CreatePlantViewModel.factory(LocalContext.current.applicationContext as Application)
+    )
 
     // 加载已有数据（编辑模式）
     LaunchedEffect(plantId) {

@@ -1,5 +1,6 @@
 package com.example.plant_id.ui.screens
 
+import android.app.Application
 import android.content.Intent
 import android.nfc.NfcAdapter
 import android.provider.Settings

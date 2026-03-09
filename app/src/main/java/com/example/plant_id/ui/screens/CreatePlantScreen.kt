@@ -27,6 +27,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.app.Application
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.plant_id.ui.components.DatePickerField
 import com.example.plant_id.ui.components.FormActionButtons
@@ -59,7 +61,9 @@ fun CreatePlantScreen(
     onPlantCreated: () -> Unit = onBack,
     nfcTagId: String? = null
 ) {
-    val vm: CreatePlantViewModel = viewModel()
+    val vm: CreatePlantViewModel = viewModel(
+        factory = CreatePlantViewModel.factory(LocalContext.current.applicationContext as Application)
+    )
 
     // NFC 标签 ID 预填（仅在首次进入时执行一次）
     LaunchedEffect(nfcTagId) {

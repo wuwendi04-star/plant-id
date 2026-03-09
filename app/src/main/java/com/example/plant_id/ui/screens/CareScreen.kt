@@ -33,6 +33,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.app.Application
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.plant_id.ui.components.PlantIllustration
 import com.example.plant_id.ui.navigation.FLOATING_NAV_BOTTOM_PADDING
@@ -53,7 +55,9 @@ import com.example.plant_id.ui.viewmodel.PlantCareItem
 fun CareScreen(
     onNavigateToPlantDetail: (Long) -> Unit = {}
 ) {
-    val vm: CareViewModel = viewModel()
+    val vm: CareViewModel = viewModel(
+        factory = CareViewModel.factory(LocalContext.current.applicationContext as Application)
+    )
 
     val overdueItems = vm.careItems.filter { it.isOverdue }
     val todayItems = vm.careItems.filter { it.isDueToday }

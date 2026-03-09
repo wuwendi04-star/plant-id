@@ -48,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import android.app.Application
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.plant_id.data.entity.Photo
@@ -66,7 +67,9 @@ fun PhotoTimelineScreen(
     plantId: Long,
     onBack: () -> Unit
 ) {
-    val vm: PlantDetailViewModel = viewModel()
+    val vm: PlantDetailViewModel = viewModel(
+        factory = PlantDetailViewModel.factory(LocalContext.current.applicationContext as Application)
+    )
     LaunchedEffect(plantId) { vm.loadPlant(plantId) }
 
     val plant = vm.plant

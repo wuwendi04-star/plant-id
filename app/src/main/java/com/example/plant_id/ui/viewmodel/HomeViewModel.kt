@@ -2,39 +2,40 @@ package com.example.plant_id.ui.viewmodel
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.plant_id.data.database.PlantDatabase
 import com.example.plant_id.data.entity.Plant
+import com.example.plant_id.data.repository.PlantRepository
+import com.example.plant_id.data.repository.WateringLogRepository
 import com.example.plant_id.ui.components.WateringUrgency
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-/**
- * 首页 ViewModel
- * - 从数据库实时观察存活/已归档植物列表（Flow → StateFlow）
- * - 首次启动时自动植入示例数据（方便阶段四验收）
- */
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
+class HomeViewModel(
+    private val plantRepository: PlantRepository,
+    private val wateringLogRepository: WateringLogRepository,
+    application: Application
+) : AndroidViewModel(application) {
 
-    private val plantDao = PlantDatabase.getInstance(application).plantDao()
-    private val wateringLogDao = PlantDatabase.getInstance(application).wateringLogDao()
-
-    /** 当前选中的 Tab（0=存活中，1=已归档），保存在 ViewModel 中避免导航返回时重置 */
+    /** 当前选中的 Tab（0=存活中，1=已归档） */
     var selectedTab by mutableIntStateOf(0)
 
-    /** 浇水状态映射表：plantId → WateringUrgency（用于快速查询） */
+    /** 浇水状态映射表：plantId → WateringUrgency */
     var wateringStatusMap by mutableStateOf<Map<Long, WateringUrgency>>(emptyMap())
         private set
 
     /** 存活中的植物列表（实时） */
-    val alivePlants: StateFlow<List<Plant>> = plantDao.getAlivePlants()
+    val alivePlants: StateFlow<List<Plant>> = plantRepository.getAlivePlants()
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
@@ -42,7 +43,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         )
 
     /** 已归档的植物列表（实时） */
-    val archivedPlants: StateFlow<List<Plant>> = plantDao.getArchivedPlants()
+    val archivedPlants: StateFlow<List<Plant>> = plantRepository.getArchivedPlants()
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
@@ -50,8 +51,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         )
 
     init {
-        // 仅在「从未初始化过」时植入示例数据，用 SharedPreferences 持久化标记
-        // 防止用户删除全部档案后重复植入
         val prefs = application.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
         val seeded = prefs.getBoolean("sample_data_seeded", false)
         if (!seeded) {
@@ -61,31 +60,29 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
 
-        // 订阅存活植物的浇水状态，实时更新状态映射表
         viewModelScope.launch {
-            plantDao.getAlivePlants().collect { plants ->
-                // 计算浇水状态（同步进行，无需 suspend）
+            plantRepository.getAlivePlants().collect { plants ->
                 val now = System.currentTimeMillis()
                 val statusMap = mutableMapOf<Long, WateringUrgency>()
 
                 plants.forEach { plant ->
-                    // 使用 runBlocking 等待异步数据库查询
                     val last = try {
-                        wateringLogDao.getLastWatering(plant.id)
+                        wateringLogRepository.getLastWatering(plant.id)
                     } catch (e: Exception) {
+                        Log.w("HomeViewModel", "Failed to fetch last watering for plant ${plant.id}", e)
                         null
                     }
 
                     val daysSince = if (last != null) {
                         ((now - last.wateredAt) / 86_400_000L).toInt().coerceAtLeast(0)
                     } else {
-                        -1 // 从未浇水
+                        -1
                     }
 
                     val urgency = when {
-                        daysSince < 0 -> WateringUrgency.OK              // 从未浇水暂不显示紧急
-                        daysSince > plant.wateringIntervalDays -> WateringUrgency.OVERDUE      // 已超期
-                        daysSince == plant.wateringIntervalDays -> WateringUrgency.DUE_TODAY   // 今日到期
+                        daysSince < 0 -> WateringUrgency.OK
+                        daysSince > plant.wateringIntervalDays -> WateringUrgency.OVERDUE
+                        daysSince == plant.wateringIntervalDays -> WateringUrgency.DUE_TODAY
                         else -> WateringUrgency.OK
                     }
 
@@ -97,7 +94,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /** 写入示例植物数据（仅数据库为空时执行一次） */
     private suspend fun seedSampleData() {
         listOf(
             Plant(
@@ -128,6 +124,18 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 iconName = "monstera",
                 notes = "喜温暖湿润，夏季保持土壤微湿"
             ),
-        ).forEach { plantDao.insert(it) }
+        ).forEach { plantRepository.insert(it) }
+    }
+
+    companion object {
+        fun factory(application: Application): ViewModelProvider.Factory =
+            object : ViewModelProvider.Factory {
+                private val db = PlantDatabase.getInstance(application)
+                private val plantRepo = PlantRepository(db.plantDao())
+                private val wateringRepo = WateringLogRepository(db.wateringLogDao())
+                @Suppress("UNCHECKED_CAST")
+                override fun <T : ViewModel> create(modelClass: Class<T>): T =
+                    HomeViewModel(plantRepo, wateringRepo, application) as T
+            }
     }
 }

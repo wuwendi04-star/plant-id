@@ -1,8 +1,11 @@
 package com.example.plant_id.worker
 
+import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.example.plant_id.data.database.PlantDatabase
+import com.example.plant_id.data.repository.PlantRepository
+import com.example.plant_id.data.repository.WateringLogRepository
 import com.example.plant_id.notification.NotificationHelper
 
 /**
@@ -32,19 +35,19 @@ class WateringReminderWorker(
 
     override suspend fun doWork(): Result {
         val db = PlantDatabase.getInstance(ctx)
-        val plantDao = db.plantDao()
-        val wateringDao = db.wateringLogDao()
+        val plantRepository = PlantRepository(db.plantDao())
+        val wateringLogRepository = WateringLogRepository(db.wateringLogDao())
 
         val prefs = ctx.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         val todayStr = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
             .format(java.util.Date())
 
-        val alivePlants = plantDao.getAllAlivePlantsSnapshot()
+        val alivePlants = plantRepository.getAllAlivePlantsSnapshot()
 
         var notifiedCount = 0
 
         for (plant in alivePlants) {
-            val lastWatering = wateringDao.getLastWatering(plant.id)
+            val lastWatering = wateringLogRepository.getLastWatering(plant.id)
 
             // 计算距上次浇水的天数；若从未浇水，则从入手日期算起
             val referenceTime = lastWatering?.wateredAt ?: plant.acquiredDate

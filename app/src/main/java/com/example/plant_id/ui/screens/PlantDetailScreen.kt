@@ -49,6 +49,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.app.Application
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.plant_id.data.entity.Photo
@@ -85,7 +86,9 @@ fun PlantDetailScreen(
     onDeleted: () -> Unit = onBack,
     nfcVm: NfcViewModel = viewModel()
 ) {
-    val vm: PlantDetailViewModel = viewModel()
+    val vm: PlantDetailViewModel = viewModel(
+        factory = PlantDetailViewModel.factory(LocalContext.current.applicationContext as Application)
+    )
     val context = LocalContext.current
 
     LaunchedEffect(plantId) {

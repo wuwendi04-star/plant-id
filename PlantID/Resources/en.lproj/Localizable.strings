@@ -1,0 +1,60 @@
+/* Tab Bar */
+"Home" = "Home";
+"Care" = "Care";
+"Profile" = "Profile";
+
+/* Profile View */
+"FAQ" = "FAQ";
+"NFC binding, watering reminders" = "NFC binding, watering reminders";
+"About" = "About";
+"Version 1.0 · Plant ID" = "Version 1.0 · Plant ID";
+"Settings" = "Settings";
+"Language, notifications, appearance" = "Language, notifications, appearance";
+
+/* Settings View */
+"Done" = "Done";
+"LANGUAGE" = "LANGUAGE";
+"Language" = "Language";
+"English" = "English";
+"Chinese" = "Chinese";
+"NOTIFICATIONS" = "NOTIFICATIONS";
+"Daily Reminder" = "Daily Reminder";
+"Reminder Time" = "Reminder Time";
+"APPEARANCE" = "APPEARANCE";
+"Appearance" = "Appearance";
+"System" = "System";
+"Light" = "Light";
+"Dark" = "Dark";
+"DATA" = "DATA";
+"Reset App Data" = "Reset App Data";
+"Reset" = "Reset";
+"Cancel" = "Cancel";
+"Reset App Data?" = "Reset App Data?";
+"This will permanently delete all your plant data. This action cannot be undone." = "This will permanently delete all your plant data. This action cannot be undone.";
+
+/* FAQ Sheet */
+"NFC Tags" = "NFC Tags";
+"Watering Reminders" = "Watering Reminders";
+"How do I bind an NFC tag to a plant?" = "How do I bind an NFC tag to a plant?";
+"Tap + on the home screen, then scan your NFC tag on the NFC scan page before creating your plant." = "Tap + on the home screen, then scan your NFC tag on the NFC scan page before creating your plant.";
+"What NFC tags are supported?" = "What NFC tags are supported?";
+"Any NDEF-compatible NFC tag (e.g. NTAG215, NTAG213). Tap the + button and scan your tag first." = "Any NDEF-compatible NFC tag (e.g. NTAG215, NTAG213). Tap the + button and scan your tag first.";
+"How do reminders work?" = "How do reminders work?";
+"Daily notifications at 8 AM remind you of plants that need watering. Make sure notifications are enabled." = "Daily notifications at 8 AM remind you of plants that need watering. Make sure notifications are enabled.";
+
+/* About Sheet */
+"Plant ID" = "Plant ID";
+"Version 1.0" = "Version 1.0";
+"Track your plants, log waterings, and never forget to water again." = "Track your plants, log waterings, and never forget to water again.";
+
+/* Home View */
+"My Plants" = "My Plants";
+"Archived" = "Archived";
+"Add Plant" = "Add Plant";
+"No plants yet" = "No plants yet";
+"Tap + to add your first plant" = "Tap + to add your first plant";
+
+/* Care View */
+"Watering Schedule" = "Watering Schedule";
+"All caught up!" = "All caught up!";
+"No plants need watering right now" = "No plants need watering right now";

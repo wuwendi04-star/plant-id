@@ -16,6 +16,14 @@ final class HomeViewModel {
     var archivedPlants: [Plant] = []
     var daysUntilWateringMap: [UUID: Int] = [:]
 
+    var wateringStatusMap: [UUID: WateringUrgency] {
+        daysUntilWateringMap.mapValues { days in
+            if days < 0 { return .overdue }
+            if days == 0 { return .dueToday }
+            return .ok
+        }
+    }
+
     private let plantRepo: PlantRepository
     private let wateringLogRepo: WateringLogRepository
 
@@ -38,8 +46,8 @@ final class HomeViewModel {
         var map: [UUID: Int] = [:]
         for plant in alivePlants {
             let last = try? wateringLogRepo.getLastWatering(plantId: plant.id)
-            let daysSince = last.map { Date().daysSince($0.wateredAt) } ?? 0
-            
+            let daysSince = last.map { Date().daysSince($0.wateredAt) } ?? Date().daysSince(plant.acquiredDate)
+
             let daysUntilWatering = plant.wateringIntervalDays - daysSince
             map[plant.id] = daysUntilWatering
         }

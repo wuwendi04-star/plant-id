@@ -25,14 +25,14 @@ struct CreatePlantView: View {
                         ))
 
                         formCard {
-                            FormField(label: "Plant Name *", text: Binding(
+                            FormField(label: "Plant Name *", placeholder: "Plant name", text: Binding(
                                 get: { vm.name },
                                 set: { vm.name = $0 }
                             ), error: vm.nameError)
 
                             Divider()
 
-                            FormField(label: "Species *", text: Binding(
+                            FormField(label: "Species *", placeholder: "Species", text: Binding(
                                 get: { vm.species },
                                 set: { vm.species = $0 }
                             ), error: vm.speciesError)

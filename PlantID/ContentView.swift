@@ -3,7 +3,6 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(AppRouter.self) private var router
-    @Environment(NfcService.self) private var nfcService
     @Environment(\.modelContext) private var modelContext
 
     var body: some View {
@@ -33,7 +32,7 @@ struct ContentView: View {
             .toolbar(.hidden, for: .tabBar)
             .ignoresSafeArea(edges: .bottom)
 
-            FloatingTabBar(selected: $router.selectedTab, onNfcScan: { router.navigateToNfcScan() })
+            FloatingTabBar(selected: $router.selectedTab, onAddPlant: { router.navigateToCreatePlant() })
         }
     }
 
@@ -46,8 +45,6 @@ struct ContentView: View {
             CreatePlantView(nfcTagId: nfcTagId)
         case .editPlant(let id):
             EditPlantView(plantId: id)
-        case .nfcScan:
-            NfcScanView()
         case .photoTimeline(let id):
             PhotoTimelineView(plantId: id)
         }

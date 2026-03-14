@@ -3,6 +3,7 @@ import Foundation
 @testable import PlantID
 
 @Suite("CreatePlantViewModel Tests")
+@MainActor
 struct CreatePlantViewModelTests {
     @Test("Empty name and species fails validation")
     func testEmptyNameInvalid() {

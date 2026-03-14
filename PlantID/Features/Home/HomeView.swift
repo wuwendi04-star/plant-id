@@ -49,7 +49,7 @@ struct HomeView: View {
             }
             Spacer()
             Button {
-                router.navigateToNfcScan()
+                router.navigateToCreatePlant()
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(size: 28))

@@ -3,6 +3,7 @@ import Foundation
 @testable import PlantID
 
 @Suite("PhotoTimelineViewModel Tests")
+@MainActor
 struct PhotoTimelineViewModelTests {
     @Test("All filter shows all photos")
     func testAllFilter() {

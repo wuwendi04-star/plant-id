@@ -8,32 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		07A1ADF838C416AC2DB64611 /* PlantIDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63AF7237D56F2FDAF33C8FD /* PlantIDApp.swift */; };
+		092840F4361ACF5D56DA1799 /* ModelContainerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081DB3DB0201C71775725DF /* ModelContainerProvider.swift */; };
+		0DAE31A6455C9D13079B755B /* OpenPlantIntentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60024A3E07D1B1E7C3DCB375 /* OpenPlantIntentTests.swift */; };
 		0FDAE1FC938E4CD7113233BF /* WaterConfirmSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A4574D7C3251EED93F061 /* WaterConfirmSheet.swift */; };
 		10F6A68D2544D783F0E883D8 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F8ABFE099F68C086048F99 /* Color+Hex.swift */; };
+		126E5343E360C9F9AE69E569 /* PlantEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F6D36FE8CC23A549BD217 /* PlantEntityQuery.swift */; };
 		146D64B4EA787EBA96996B82 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6AF93F840FD0583FF9624 /* Plant.swift */; };
 		1757958A72D0C0CCA80359FA /* EditPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7059D53C36A612B0FC5CC77 /* EditPlantViewModel.swift */; };
 		1970B18D72849996B3B6A698 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACC7328A1E0089B245D797 /* PhotoRepository.swift */; };
 		1C794299BB87F1385FE9C722 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45DC4197A34C60B9A8C1B432 /* Localizable.strings */; };
 		1DCDFAD8DED07087883DA547 /* PlantRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359FDDBE500F743307968F6 /* PlantRepositoryTests.swift */; };
+		2161288B29709E9072062B65 /* DeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6184BFE93CEF5AF8BA06133B /* DeepLinkTests.swift */; };
 		2634A9F3F99F5D069388D8AD /* PlantIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C739C720FCC2D1D8A2FD8C5 /* PlantIllustration.swift */; };
 		271A0D549E7493760B0B67A5 /* LanguageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0E74E4DE3D8DE3E2BA73B /* LanguageManagerTests.swift */; };
 		27D7D4FB0446521836BD369A /* SwiftDataWateringLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB70ED4E11147AF2E3921FD /* SwiftDataWateringLogRepository.swift */; };
 		2D896219DC7C756196CF4AE3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC6FB2D722770E3BC2F45B /* AppColors.swift */; };
 		3163786F63E2BD437375BEC4 /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0463B0ABD30C6A95504D995 /* FloatingTabBar.swift */; };
+		34D25DABDEBA3487F9759821 /* OpenPlantIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C8A5EA2D3B235F5B52279 /* OpenPlantIntent.swift */; };
 		3A74178C6BD2B5D6E7579080 /* BackgroundTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA181179C6570662ECEC2DD5 /* BackgroundTaskService.swift */; };
 		3BF4F043728B0E288C601727 /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65384AA7BE493CA4FE3AB1 /* PlantDetailView.swift */; };
 		429C4B1E520B69C4DB19A527 /* WateringSuccessDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B2482ABD7D4F0611D3F4D /* WateringSuccessDialog.swift */; };
-		4518C578908C3275DC32A9FD /* NfcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5CAE85DBD2A0D21C006A33 /* NfcService.swift */; };
 		45D6A47E1487E19958DAA3E8 /* CreatePlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BBA5DA104F3809BE780463 /* CreatePlantView.swift */; };
 		4640AE2F6574AF1E5A162322 /* AppGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF2F451306051879FB9C2D /* AppGradients.swift */; };
 		464348B5C11DBF40DF5562E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F6299155E7313EF2BE88D2 /* HomeView.swift */; };
 		46602DA2A40B4D4D636EFF41 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FBCB82F2896685BEAC4F4A /* CameraService.swift */; };
 		48590C8FD9F933B114DD537B /* PhotoStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72328EBCEC20B203EC5B595 /* PhotoStorageService.swift */; };
 		4D647A6EC9A97A087464E0DA /* PlantDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E445C4C24BC278B2AEE7D1 /* PlantDetailViewModelTests.swift */; };
+		4DE00D087A72ADFE5D9E425E /* MockRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BF5CD592A02433C1B8AD90 /* MockRepositories.swift */; };
+		4ECE9ADE0C5EE4BB0BD23EB1 /* LinkToShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF261DABD4D8E6916CF4DB /* LinkToShortcutView.swift */; };
 		5119F8F584CF9E7FCF5C4E93 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493FADE25EFF7B7EDFA8D3AC /* Date+Extensions.swift */; };
 		58060B953545FC2FEE365528 /* PhotoLightbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A74902101AE0050BE95A67 /* PhotoLightbox.swift */; };
-		5F4A0EE0EFFA5EF551CFC958 /* NfcScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC7233715312AE21429A42 /* NfcScanViewModel.swift */; };
-		60EF22CC5ADD716A2091325B /* NfcSuccessDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8936CA84845FEF685C56013 /* NfcSuccessDialog.swift */; };
 		62E98C9CA71CFDCCF7905715 /* PlantIDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DF0E78B88BACE350043690 /* PlantIDUITests.swift */; };
 		63CA36840922BE6DC793755D /* EditPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D301DADE993DDDBB143258 /* EditPlantView.swift */; };
 		6A5DF2616CFBCE1F5001F554 /* WateringLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17E41786E66057792167ACB /* WateringLogRepository.swift */; };
@@ -56,7 +60,7 @@
 		B00BC3A93B86560FEDFCA2D8 /* PhotoTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDF837D5562F26F2ABE22F /* PhotoTimelineViewModel.swift */; };
 		B4F695CD53C539019DE617E4 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688F210D485BAA6F3A33A107 /* AppRouter.swift */; };
 		B8E311C0C43EA32DFF1AE325 /* SwiftDataPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C25B0BA6E02A18B9E7392 /* SwiftDataPhotoRepository.swift */; };
-		BB053804EF4504AD8D094F18 /* NfcScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED34A80B79C4D0A1EC828 /* NfcScanView.swift */; };
+		BEDDAA0EC237672ABDF0AC16 /* PlantEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E567BB222A1BD4295555ED /* PlantEntity.swift */; };
 		CF07AD1545BDFCB91A60C7BD /* CreatePlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18B74282D9FBF0CE083288 /* CreatePlantViewModel.swift */; };
 		D38CAD74DF27729FD140A29B /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EAB8B733CBBE358649F680 /* AppearanceManager.swift */; };
 		D442F55A953FDBEA0035340A /* WateringLogRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F26B62058968E81BF75FB /* WateringLogRepositoryTests.swift */; };
@@ -69,6 +73,7 @@
 		EC6AE4067C176CAE2E64740D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADEEA371D80738A6966D194 /* SettingsView.swift */; };
 		EC6C71AE3F2E62AD4E46F616 /* CareViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C712F223AEBDB13F404DC5A2 /* CareViewModelTests.swift */; };
 		ED1E29CE78DF8911BD000700 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E5EC555D0294D754F83DD /* LanguageManager.swift */; };
+		EEA5B92067661C44676A4958 /* PlantEntityQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0081974410F5B7C7D917F /* PlantEntityQueryTests.swift */; };
 		F01F48215FA24ED5EF947ED0 /* IconSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79488D2BA632C716E249D68 /* IconSelector.swift */; };
 		F0820941CD109A447CE69809 /* FormComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697332C330E18192FDAFAE4 /* FormComponents.swift */; };
 		F24E8A08A1B68FBF2BFFD20A /* AppearanceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576506C8126BAE07362765B /* AppearanceManagerTests.swift */; };
@@ -100,6 +105,8 @@
 		12FBCB82F2896685BEAC4F4A /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		138C25B0BA6E02A18B9E7392 /* SwiftDataPhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataPhotoRepository.swift; sourceTree = "<group>"; };
 		15E6AF93F840FD0583FF9624 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		1AAF261DABD4D8E6916CF4DB /* LinkToShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkToShortcutView.swift; sourceTree = "<group>"; };
+		21BF5CD592A02433C1B8AD90 /* MockRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositories.swift; sourceTree = "<group>"; };
 		23D088A347DD06EFD23DAF19 /* PlantID.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantID.entitlements; sourceTree = "<group>"; };
 		25ACC9CA29791FEF9D3A5F1B /* PhotoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryTests.swift; sourceTree = "<group>"; };
 		28ACC7328A1E0089B245D797 /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
@@ -112,11 +119,11 @@
 		408460094EBC63CAAA85362E /* PlantID.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PlantID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45418B2BCAA1ACC8DBB8C4F0 /* PlantIDTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlantIDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		493FADE25EFF7B7EDFA8D3AC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		4C5CAE85DBD2A0D21C006A33 /* NfcService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcService.swift; sourceTree = "<group>"; };
 		4C739C720FCC2D1D8A2FD8C5 /* PlantIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantIllustration.swift; sourceTree = "<group>"; };
 		5ADEEA371D80738A6966D194 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5DF1D7C2F862D50A689B1458 /* SwiftDataPlantRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataPlantRepository.swift; sourceTree = "<group>"; };
-		62AC7233715312AE21429A42 /* NfcScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcScanViewModel.swift; sourceTree = "<group>"; };
+		60024A3E07D1B1E7C3DCB375 /* OpenPlantIntentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPlantIntentTests.swift; sourceTree = "<group>"; };
+		6184BFE93CEF5AF8BA06133B /* DeepLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkTests.swift; sourceTree = "<group>"; };
 		687CDBD177E4E24D2E926698 /* PlantIDUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlantIDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		688F210D485BAA6F3A33A107 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		6B18B74282D9FBF0CE083288 /* CreatePlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlantViewModel.swift; sourceTree = "<group>"; };
@@ -136,18 +143,20 @@
 		974EB0189C19E5A7C9E7A879 /* CreatePlantViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlantViewModelTests.swift; sourceTree = "<group>"; };
 		988022B74015336214982383 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		98E2882C45692BA49394FF2C /* PhotoTimelineViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTimelineViewModelTests.swift; sourceTree = "<group>"; };
-		9EEED34A80B79C4D0A1EC828 /* NfcScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcScanView.swift; sourceTree = "<group>"; };
 		9F75F8C7232AEC8A7261DB94 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A0463B0ABD30C6A95504D995 /* FloatingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBar.swift; sourceTree = "<group>"; };
 		A321F174E290E0677AA58714 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
 		A4E1777FEA17576EE6A72003 /* CareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareView.swift; sourceTree = "<group>"; };
 		A697332C330E18192FDAFAE4 /* FormComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponents.swift; sourceTree = "<group>"; };
 		AE85D2881DC90D9212AB3E05 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
-		B8936CA84845FEF685C56013 /* NfcSuccessDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcSuccessDialog.swift; sourceTree = "<group>"; };
+		B83C8A5EA2D3B235F5B52279 /* OpenPlantIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPlantIntent.swift; sourceTree = "<group>"; };
 		B8D301DADE993DDDBB143258 /* EditPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantView.swift; sourceTree = "<group>"; };
+		B9B0081974410F5B7C7D917F /* PlantEntityQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEntityQueryTests.swift; sourceTree = "<group>"; };
 		BECC6FB2D722770E3BC2F45B /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		C17E41786E66057792167ACB /* WateringLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringLogRepository.swift; sourceTree = "<group>"; };
+		C27F6D36FE8CC23A549BD217 /* PlantEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEntityQuery.swift; sourceTree = "<group>"; };
 		C712F223AEBDB13F404DC5A2 /* CareViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareViewModelTests.swift; sourceTree = "<group>"; };
+		C7E567BB222A1BD4295555ED /* PlantEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEntity.swift; sourceTree = "<group>"; };
 		CB4480B99AB6963B91C446EC /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		CF1D11B9586824A26670C07D /* WateringLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringLog.swift; sourceTree = "<group>"; };
 		D5A4C64EF360026AEE869C41 /* TabDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDestination.swift; sourceTree = "<group>"; };
@@ -160,6 +169,7 @@
 		EA181179C6570662ECEC2DD5 /* BackgroundTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskService.swift; sourceTree = "<group>"; };
 		EFB70ED4E11147AF2E3921FD /* SwiftDataWateringLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataWateringLogRepository.swift; sourceTree = "<group>"; };
 		EFC0E74E4DE3D8DE3E2BA73B /* LanguageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManagerTests.swift; sourceTree = "<group>"; };
+		F081DB3DB0201C71775725DF /* ModelContainerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerProvider.swift; sourceTree = "<group>"; };
 		F09339E6FA097356C7061574 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F1A26DBC0F0B70D7B33ED8E0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F72328EBCEC20B203EC5B595 /* PhotoStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStorageService.swift; sourceTree = "<group>"; };
@@ -210,6 +220,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		1A401ABAEBECAAC4A22F1732 /* LinkToShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF261DABD4D8E6916CF4DB /* LinkToShortcutView.swift */,
+			);
+			path = LinkToShortcut;
+			sourceTree = "<group>";
+		};
 		1E5114131301A3C609FF9A02 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +248,14 @@
 				00E445C4C24BC278B2AEE7D1 /* PlantDetailViewModelTests.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2FFB7F7244498A9554997F2F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				21BF5CD592A02433C1B8AD90 /* MockRepositories.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		31C68E381F5DA2AE6096FECF /* Home */ = {
@@ -253,6 +279,9 @@
 		3A4CBFA7D719477412D57FEF /* PlantIDTests */ = {
 			isa = PBXGroup;
 			children = (
+				54DC7104272ADC03F47A53DB /* DeepLink */,
+				638123FFC10360B95BBC009A /* Intents */,
+				2FFB7F7244498A9554997F2F /* Mocks */,
 				B707F20D96333FBDEAEE2DB3 /* Repositories */,
 				A747533C320EB686E96126FC /* Services */,
 				2AF48C7F23765DCF4442FB6F /* ViewModels */,
@@ -280,6 +309,7 @@
 				5AD82375E3E2C79B6061655E /* Components */,
 				7E9569204377A5A13DCB70F3 /* Extensions */,
 				5A926682619BE252356A4E5F /* Features */,
+				4C6D5E475A946F2FF5298227 /* Intents */,
 				3CFB7AEA2BDFADF7DAE68028 /* Models */,
 				DF59245FE92D3DE311236E39 /* Navigation */,
 				0A6726BAC5A4A98A81AEEA9E /* Repositories */,
@@ -299,6 +329,25 @@
 			path = PlantDetail;
 			sourceTree = "<group>";
 		};
+		4C6D5E475A946F2FF5298227 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				F081DB3DB0201C71775725DF /* ModelContainerProvider.swift */,
+				B83C8A5EA2D3B235F5B52279 /* OpenPlantIntent.swift */,
+				C7E567BB222A1BD4295555ED /* PlantEntity.swift */,
+				C27F6D36FE8CC23A549BD217 /* PlantEntityQuery.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		54DC7104272ADC03F47A53DB /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+				6184BFE93CEF5AF8BA06133B /* DeepLinkTests.swift */,
+			);
+			path = DeepLink;
+			sourceTree = "<group>";
+		};
 		58A83F586AAE70761EFAA129 /* CreatePlant */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +364,7 @@
 				58A83F586AAE70761EFAA129 /* CreatePlant */,
 				3747D2485F3F09D91E2D08F4 /* EditPlant */,
 				31C68E381F5DA2AE6096FECF /* Home */,
-				834C1694140C8FD6F9E4807D /* NfcScan */,
+				1A401ABAEBECAAC4A22F1732 /* LinkToShortcut */,
 				0F0BB8FD33DE1D62849C1A90 /* PhotoTimeline */,
 				4AEFE191AF6E32AE5458E60C /* PlantDetail */,
 				E3AC35C5FF53FB51B7F4CBDC /* Profile */,
@@ -329,7 +378,6 @@
 				A0463B0ABD30C6A95504D995 /* FloatingTabBar.swift */,
 				A697332C330E18192FDAFAE4 /* FormComponents.swift */,
 				F79488D2BA632C716E249D68 /* IconSelector.swift */,
-				B8936CA84845FEF685C56013 /* NfcSuccessDialog.swift */,
 				72A74902101AE0050BE95A67 /* PhotoLightbox.swift */,
 				E09E38462D102C18E620F633 /* PlantCard.swift */,
 				4C739C720FCC2D1D8A2FD8C5 /* PlantIllustration.swift */,
@@ -340,6 +388,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		638123FFC10360B95BBC009A /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				60024A3E07D1B1E7C3DCB375 /* OpenPlantIntentTests.swift */,
+				B9B0081974410F5B7C7D917F /* PlantEntityQueryTests.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		7E9569204377A5A13DCB70F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,15 +405,6 @@
 				8114CC94F5653BC0B9073AA5 /* View+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		834C1694140C8FD6F9E4807D /* NfcScan */ = {
-			isa = PBXGroup;
-			children = (
-				9EEED34A80B79C4D0A1EC828 /* NfcScanView.swift */,
-				62AC7233715312AE21429A42 /* NfcScanViewModel.swift */,
-			);
-			path = NfcScan;
 			sourceTree = "<group>";
 		};
 		83557B8E58AE9EDDF3F0270B /* PlantIDUITests */ = {
@@ -401,7 +449,6 @@
 				EA181179C6570662ECEC2DD5 /* BackgroundTaskService.swift */,
 				12FBCB82F2896685BEAC4F4A /* CameraService.swift */,
 				FA4E5EC555D0294D754F83DD /* LanguageManager.swift */,
-				4C5CAE85DBD2A0D21C006A33 /* NfcService.swift */,
 				79C80A6FC74C5DC31A1D70AA /* NotificationService.swift */,
 				F72328EBCEC20B203EC5B595 /* PhotoStorageService.swift */,
 				3D49823BE92C61791DFB997B /* SeedDataService.swift */,
@@ -553,11 +600,15 @@
 				F24E8A08A1B68FBF2BFFD20A /* AppearanceManagerTests.swift in Sources */,
 				EC6C71AE3F2E62AD4E46F616 /* CareViewModelTests.swift in Sources */,
 				A341F76B509E6C5C24ABFA8E /* CreatePlantViewModelTests.swift in Sources */,
+				2161288B29709E9072062B65 /* DeepLinkTests.swift in Sources */,
 				71DE0A7513AE23E999E5DE7E /* HomeViewModelTests.swift in Sources */,
 				271A0D549E7493760B0B67A5 /* LanguageManagerTests.swift in Sources */,
+				4DE00D087A72ADFE5D9E425E /* MockRepositories.swift in Sources */,
+				0DAE31A6455C9D13079B755B /* OpenPlantIntentTests.swift in Sources */,
 				D61F3826FE0A4163581819C7 /* PhotoRepositoryTests.swift in Sources */,
 				D693B9933A153F8ED79FFB82 /* PhotoTimelineViewModelTests.swift in Sources */,
 				4D647A6EC9A97A087464E0DA /* PlantDetailViewModelTests.swift in Sources */,
+				EEA5B92067661C44676A4958 /* PlantEntityQueryTests.swift in Sources */,
 				1DCDFAD8DED07087883DA547 /* PlantRepositoryTests.swift in Sources */,
 				D442F55A953FDBEA0035340A /* WateringLogRepositoryTests.swift in Sources */,
 			);
@@ -590,11 +641,10 @@
 				6DE5943412575F2E49B04E42 /* HomeViewModel.swift in Sources */,
 				F01F48215FA24ED5EF947ED0 /* IconSelector.swift in Sources */,
 				ED1E29CE78DF8911BD000700 /* LanguageManager.swift in Sources */,
-				BB053804EF4504AD8D094F18 /* NfcScanView.swift in Sources */,
-				5F4A0EE0EFFA5EF551CFC958 /* NfcScanViewModel.swift in Sources */,
-				4518C578908C3275DC32A9FD /* NfcService.swift in Sources */,
-				60EF22CC5ADD716A2091325B /* NfcSuccessDialog.swift in Sources */,
+				4ECE9ADE0C5EE4BB0BD23EB1 /* LinkToShortcutView.swift in Sources */,
+				092840F4361ACF5D56DA1799 /* ModelContainerProvider.swift in Sources */,
 				6C4B82F2FAE531CBC0B55536 /* NotificationService.swift in Sources */,
+				34D25DABDEBA3487F9759821 /* OpenPlantIntent.swift in Sources */,
 				8413DD6980360E662444EE9F /* Photo.swift in Sources */,
 				58060B953545FC2FEE365528 /* PhotoLightbox.swift in Sources */,
 				1970B18D72849996B3B6A698 /* PhotoRepository.swift in Sources */,
@@ -605,6 +655,8 @@
 				E02BC0731DC834676AFC5B44 /* PlantCard.swift in Sources */,
 				3BF4F043728B0E288C601727 /* PlantDetailView.swift in Sources */,
 				9DC6F5514DC4A2BAA9201F6C /* PlantDetailViewModel.swift in Sources */,
+				BEDDAA0EC237672ABDF0AC16 /* PlantEntity.swift in Sources */,
+				126E5343E360C9F9AE69E569 /* PlantEntityQuery.swift in Sources */,
 				07A1ADF838C416AC2DB64611 /* PlantIDApp.swift in Sources */,
 				2634A9F3F99F5D069388D8AD /* PlantIllustration.swift in Sources */,
 				6B1CE27A35AF7C49818CC4E8 /* PlantRepository.swift in Sources */,
@@ -745,7 +797,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PlantID/PlantID.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -875,7 +926,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PlantID/PlantID.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";

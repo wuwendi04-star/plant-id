@@ -14,10 +14,6 @@ final class AppRouter {
         path.append(AppDestination.createPlant(nfcTagId: nfcTagId))
     }
 
-    func navigateToNfcScan() {
-        path.append(AppDestination.nfcScan)
-    }
-
     func navigateToEditPlant(_ id: UUID) {
         path.append(AppDestination.editPlant(id))
     }

@@ -3,6 +3,7 @@ import Foundation
 @testable import PlantID
 
 @Suite("HomeViewModel Tests")
+@MainActor
 struct HomeViewModelTests {
     @Test("Load data populates alive plants")
     func testLoadAlivePlants() {
@@ -57,8 +58,8 @@ struct HomeViewModelTests {
 
         let plant = Plant(
             name: "NewPlant",
-            wateringIntervalDays: 7,
-            acquiredDate: Date().addingTimeInterval(-10 * 86400)
+            acquiredDate: Date().addingTimeInterval(-10 * 86400),
+            wateringIntervalDays: 7
         )
         plantRepo.plants = [plant]
 

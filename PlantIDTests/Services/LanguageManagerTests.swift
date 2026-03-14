@@ -2,7 +2,7 @@ import Testing
 import Foundation
 @testable import PlantID
 
-@Suite("LanguageManager Tests")
+@Suite("LanguageManager Tests", .serialized)
 @MainActor
 struct LanguageManagerTests {
     init() {

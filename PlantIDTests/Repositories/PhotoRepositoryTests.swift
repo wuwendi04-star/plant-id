@@ -4,6 +4,7 @@ import Foundation
 @testable import PlantID
 
 @Suite("PhotoRepository Tests")
+@MainActor
 struct PhotoRepositoryTests {
     private func makeRepos() throws -> (SwiftDataPhotoRepository, SwiftDataPlantRepository, ModelContainer) {
         let schema = Schema([Plant.self, WateringLog.self, Photo.self])

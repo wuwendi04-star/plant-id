@@ -3,6 +3,7 @@ import Foundation
 @testable import PlantID
 
 @Suite("CareViewModel Tests")
+@MainActor
 struct CareViewModelTests {
     @Test("Plants sorted by urgency - overdue first")
     func testSortByUrgency() {

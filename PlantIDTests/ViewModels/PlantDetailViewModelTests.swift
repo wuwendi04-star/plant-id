@@ -3,6 +3,7 @@ import Foundation
 @testable import PlantID
 
 @Suite("PlantDetailViewModel Tests")
+@MainActor
 struct PlantDetailViewModelTests {
     private func makeVM(plant: Plant, logRepo: MockWateringLogRepository = MockWateringLogRepository()) -> PlantDetailViewModel {
         let plantRepo = MockPlantRepository()

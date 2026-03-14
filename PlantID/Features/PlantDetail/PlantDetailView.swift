@@ -1,6 +1,6 @@
 import SwiftUI
-import SwiftUI
 import SwiftData
+import UIKit
 
 struct PlantDetailView: View {
     let plantId: UUID
@@ -11,6 +11,7 @@ struct PlantDetailView: View {
     @State private var showArchiveDialog = false
     @State private var showDeleteDialog = false
     @State private var showCamera = false
+    @State private var showLinkToShortcut = false
     @State private var pendingWatering = false
 
     var body: some View {
@@ -78,6 +79,12 @@ struct PlantDetailView: View {
                 }
             )
             .presentationDetents([.medium])
+        }
+        .sheet(isPresented: $showLinkToShortcut) {
+            if let plant = viewModel?.plant {
+                LinkToShortcutView(plantId: plant.id, plantName: plant.name)
+                    .presentationDetents([.large])
+            }
         }
         .sheet(isPresented: $showCamera) {
             CameraPicker { image in
@@ -147,6 +154,18 @@ struct PlantDetailView: View {
             if !plant.nfcTagId.isEmpty {
                 infoRow("NFC Tag", value: plant.nfcTagId)
             }
+            Button {
+                showLinkToShortcut = true
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: "link")
+                    Text("Link to NFC Tag via Shortcuts")
+                }
+                .font(AppFonts.body())
+                .foregroundStyle(AppColors.primary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .buttonStyle(.plain)
         }
         .padding(16)
         .cardStyle()
@@ -259,5 +278,3 @@ struct PlantDetailView: View {
             )
     }
 }
-
-import UIKit

@@ -2,13 +2,13 @@ import SwiftUI
 
 struct FloatingTabBar: View {
     @Binding var selected: TabDestination
-    let onNfcScan: () -> Void
+    let onAddPlant: () -> Void
 
     var body: some View {
         HStack(spacing: 0) {
             tabButton(destination: .home, icon: "house.fill", label: "Home")
             Spacer()
-            nfcButton()
+            addButton()
             Spacer()
             tabButton(destination: .care, icon: "drop.fill", label: "Care")
             Spacer()
@@ -41,19 +41,20 @@ struct FloatingTabBar: View {
         .buttonStyle(.plain)
     }
 
-    private func nfcButton() -> some View {
-        Button(action: onNfcScan) {
+    private func addButton() -> some View {
+        Button(action: onAddPlant) {
             ZStack {
                 Circle()
                     .fill(AppColors.primary)
                     .frame(width: 56, height: 56)
                     .shadow(color: AppColors.primary.opacity(0.4), radius: 8, y: 4)
-                Image(systemName: "wave.3.right")
+                Image(systemName: "plus")
                     .font(.system(size: 22, weight: .semibold))
                     .foregroundStyle(.white)
             }
         }
         .buttonStyle(.plain)
         .offset(y: -12)
+        .accessibilityLabel("Add Plant")
     }
 }

@@ -6,28 +6,15 @@ final class PlantIDUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments = ["--uitesting"]
+        // Force English so localized accessibility labels match test expectations
+        app.launchArguments = ["--uitesting", "-app_language", "en"]
         app.launch()
     }
 
     // MARK: - Create Plant Flow
 
     func testCreatePlantFlow() throws {
-        // Tap FAB / "+" button
-        let addButton = app.buttons["Add Plant"]
-        XCTAssertTrue(addButton.waitForExistence(timeout: 5))
-        addButton.tap()
-
-        // Fill in plant name
-        let nameField = app.textFields["Plant name"]
-        XCTAssertTrue(nameField.waitForExistence(timeout: 3))
-        nameField.tap()
-        nameField.typeText("Test Monstera")
-
-        // Save
-        let saveButton = app.buttons["Save Plant"]
-        XCTAssertTrue(saveButton.waitForExistence(timeout: 3))
-        saveButton.tap()
+        createPlant(name: "Test Monstera", species: "Monstera deliciosa")
 
         // Verify plant appears in home
         let plantCard = app.staticTexts["Test Monstera"]
@@ -66,32 +53,23 @@ final class PlantIDUITests: XCTestCase {
         let homeTab = app.buttons["Home"]
         XCTAssertTrue(homeTab.waitForExistence(timeout: 5))
         homeTab.tap()
-        XCTAssertTrue(app.navigationBars["My Plants"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["My Plants"].waitForExistence(timeout: 3))
 
         // Care tab
         let careTab = app.buttons["Care"]
         careTab.tap()
-        XCTAssertTrue(app.navigationBars["Care"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Care"].waitForExistence(timeout: 3))
 
         // Profile tab
         let profileTab = app.buttons["Profile"]
         profileTab.tap()
-        XCTAssertTrue(app.navigationBars["Profile"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Profile"].waitForExistence(timeout: 3))
     }
 
     // MARK: - Archive Plant Flow
 
     func testArchivePlantFlow() throws {
-        // Create a plant first
-        let addButton = app.buttons["Add Plant"]
-        XCTAssertTrue(addButton.waitForExistence(timeout: 5))
-        addButton.tap()
-
-        let nameField = app.textFields["Plant name"]
-        XCTAssertTrue(nameField.waitForExistence(timeout: 3))
-        nameField.tap()
-        nameField.typeText("Archive Me")
-        app.buttons["Save Plant"].tap()
+        createPlant(name: "Archive Me", species: "Test species")
 
         // Open plant detail
         let plantCard = app.staticTexts["Archive Me"]
@@ -104,7 +82,7 @@ final class PlantIDUITests: XCTestCase {
         editButton.tap()
 
         // Archive
-        let archiveButton = app.buttons["Archive Plant"]
+        let archiveButton = app.buttons["Archive This Plant"]
         XCTAssertTrue(archiveButton.waitForExistence(timeout: 3))
         archiveButton.tap()
 
@@ -112,5 +90,30 @@ final class PlantIDUITests: XCTestCase {
         let confirmButton = app.buttons["Archive"]
         XCTAssertTrue(confirmButton.waitForExistence(timeout: 3))
         confirmButton.tap()
+    }
+
+    // MARK: - Helpers
+
+    private func createPlant(name: String, species: String) {
+        let addButton = app.buttons["Add Plant"]
+        XCTAssertTrue(addButton.waitForExistence(timeout: 5))
+        addButton.tap()
+
+        // Fill in plant name
+        let nameField = app.textFields["Plant name"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 3))
+        nameField.tap()
+        nameField.typeText(name)
+
+        // Fill in species
+        let speciesField = app.textFields["Species"]
+        XCTAssertTrue(speciesField.waitForExistence(timeout: 3))
+        speciesField.tap()
+        speciesField.typeText(species)
+
+        // Save
+        let saveButton = app.buttons["Create Plant"]
+        XCTAssertTrue(saveButton.waitForExistence(timeout: 3))
+        saveButton.tap()
     }
 }

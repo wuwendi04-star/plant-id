@@ -2,7 +2,7 @@ import Testing
 import SwiftUI
 @testable import PlantID
 
-@Suite("AppearanceManager Tests")
+@Suite("AppearanceManager Tests", .serialized)
 @MainActor
 struct AppearanceManagerTests {
     init() {

@@ -1,0 +1,76 @@
+/* Tab Bar */
+"Home" = "首页";
+"Care" = "养护";
+"Profile" = "我的";
+
+/* Profile View */
+"FAQ" = "常见问题";
+"NFC binding, watering reminders" = "NFC 绑定、浇水提醒";
+"About" = "关于";
+"Version 1.0 · Plant ID" = "版本 1.0 · Plant ID";
+"Settings" = "设置";
+"Language, notifications, appearance" = "语言、通知、外观";
+
+/* Settings View */
+"Done" = "完成";
+"LANGUAGE" = "语言";
+"Language" = "语言";
+"English" = "English";
+"Chinese" = "中文";
+"NOTIFICATIONS" = "通知";
+"Daily Reminder" = "每日提醒";
+"Reminder Time" = "提醒时间";
+"APPEARANCE" = "外观";
+"Appearance" = "外观";
+"System" = "跟随系统";
+"Light" = "浅色";
+"Dark" = "深色";
+"DATA" = "数据";
+"Reset App Data" = "重置应用数据";
+"Reset" = "重置";
+"Cancel" = "取消";
+"Reset App Data?" = "重置应用数据？";
+"This will permanently delete all your plant data. This action cannot be undone." = "此操作将永久删除所有植物数据，无法撤销。";
+
+/* FAQ Sheet */
+"NFC Tags" = "NFC 标签";
+"Watering Reminders" = "浇水提醒";
+"How do I bind an NFC tag to a plant?" = "如何将 NFC 标签绑定到植物？";
+"Tap + on the home screen, then scan your NFC tag on the NFC scan page before creating your plant." = "在首页点击 +，然后在 NFC 扫描页面扫描标签，再创建植物。";
+"What NFC tags are supported?" = "支持哪些 NFC 标签？";
+"Any NDEF-compatible NFC tag (e.g. NTAG215, NTAG213). Tap the + button and scan your tag first." = "任何兼容 NDEF 的 NFC 标签（如 NTAG215、NTAG213）均可使用，请先点击 + 扫描标签。";
+"How do reminders work?" = "提醒如何工作？";
+"Daily notifications at 8 AM remind you of plants that need watering. Make sure notifications are enabled." = "每天早上 8 点推送通知，提醒您哪些植物需要浇水，请确保已开启通知权限。";
+
+/* About Sheet */
+"Plant ID" = "Plant ID";
+"Version 1.0" = "版本 1.0";
+"Track your plants, log waterings, and never forget to water again." = "记录您的植物，追踪浇水历史，再也不会忘记浇水。";
+
+/* Home View */
+"My Plants" = "我的植物";
+"Archived" = "已归档";
+"Add Plant" = "添加植物";
+"No plants yet" = "暂无植物";
+"Tap + to add your first plant" = "点击 + 添加第一株植物";
+
+/* Care View */
+"Watering Schedule" = "浇水计划";
+"All caught up!" = "全部完成！";
+"No plants need watering right now" = "当前没有植物需要浇水";
+"Overdue" = "已超期";
+"Due Today" = "今日浇水";
+"Coming Up" = "即将到期";
+"All plants are healthy!" = "所有植物状态良好！";
+"View" = "查看";
+"Water today" = "今天浇水";
+
+/* Home View tabs */
+"Alive" = "存活";
+
+/* Settings alerts */
+"Reset Failed" = "重置失败";
+"Could not delete all plant data. Please try again." = "无法删除所有植物数据，请重试。";
+"Notifications Disabled" = "通知已关闭";
+"Allow notifications in Settings to enable daily plant care reminders." = "请在设置中允许通知，以启用每日植物养护提醒。";
+"Open Settings" = "打开设置";

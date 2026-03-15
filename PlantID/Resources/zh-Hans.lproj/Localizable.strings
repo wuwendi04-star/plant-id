@@ -58,3 +58,19 @@
 "Watering Schedule" = "浇水计划";
 "All caught up!" = "全部完成！";
 "No plants need watering right now" = "当前没有植物需要浇水";
+"Overdue" = "已超期";
+"Due Today" = "今日浇水";
+"Coming Up" = "即将到期";
+"All plants are healthy!" = "所有植物状态良好！";
+"View" = "查看";
+"Water today" = "今天浇水";
+
+/* Home View tabs */
+"Alive" = "存活";
+
+/* Settings alerts */
+"Reset Failed" = "重置失败";
+"Could not delete all plant data. Please try again." = "无法删除所有植物数据，请重试。";
+"Notifications Disabled" = "通知已关闭";
+"Allow notifications in Settings to enable daily plant care reminders." = "请在设置中允许通知，以启用每日植物养护提醒。";
+"Open Settings" = "打开设置";

@@ -4,13 +4,14 @@ import SwiftData
 struct CareView: View {
     @Environment(AppRouter.self) private var router
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.localizedBundle) private var bundle
     @State private var viewModel: CareViewModel?
 
     var body: some View {
         ZStack {
             BackgroundGradientView()
             VStack(spacing: 0) {
-                Text("Care")
+                Text("Care", bundle: bundle)
                     .font(AppFonts.title(28))
                     .foregroundStyle(AppColors.textPrimary)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -50,15 +51,15 @@ struct CareView: View {
                 let okItems = viewModel?.careItems.filter { !$0.needsAttention } ?? []
 
                 if !overdueItems.isEmpty {
-                    sectionHeader("Overdue", color: AppColors.urgencyOverdue)
+                    sectionHeader(String(localized: "Overdue", bundle: bundle), color: AppColors.urgencyOverdue)
                     ForEach(overdueItems) { item in careRow(item) }
                 }
                 if !todayItems.isEmpty {
-                    sectionHeader("Due Today", color: AppColors.urgencyDueToday)
+                    sectionHeader(String(localized: "Due Today", bundle: bundle), color: AppColors.urgencyDueToday)
                     ForEach(todayItems) { item in careRow(item) }
                 }
                 if !okItems.isEmpty {
-                    sectionHeader("Coming Up", color: AppColors.urgencyOK)
+                    sectionHeader(String(localized: "Coming Up", bundle: bundle), color: AppColors.urgencyOK)
                     ForEach(okItems) { item in careRow(item) }
                 }
             }
@@ -68,7 +69,7 @@ struct CareView: View {
     }
 
     private func sectionHeader(_ title: String, color: Color) -> some View {
-        Text(title)
+        Text(verbatim: title)
             .font(AppFonts.badge())
             .fontWeight(.semibold)
             .foregroundStyle(color)
@@ -89,7 +90,7 @@ struct CareView: View {
                 Text(item.isOverdue
                     ? "Overdue by \(-item.daysUntilDue) day\(-item.daysUntilDue == 1 ? "" : "s")"
                     : item.isDueToday
-                        ? "Water today"
+                        ? String(localized: "Water today", bundle: bundle)
                         : "In \(item.daysUntilDue) days"
                 )
                 .font(AppFonts.caption())
@@ -98,7 +99,7 @@ struct CareView: View {
 
             Spacer()
 
-            Button("View") {
+            Button(String(localized: "View", bundle: bundle)) {
                 router.navigateToPlantDetail(item.plant.id)
             }
             .font(AppFonts.caption())
@@ -118,7 +119,7 @@ struct CareView: View {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 48))
                 .foregroundStyle(AppColors.urgencyOK)
-            Text("All plants are healthy!")
+            Text("All plants are healthy!", bundle: bundle)
                 .font(AppFonts.headline())
                 .foregroundStyle(AppColors.textPrimary)
             Spacer()

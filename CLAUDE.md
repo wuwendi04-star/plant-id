@@ -94,3 +94,22 @@ Before ending a session, verify ALL of the following:
 - Branch: one feature/fix per branch (worktree)
 - Commits: `feat:`, `fix:`, `test:`, `refactor:`, `chore:`, `ci:`, `docs:`
 - PRs: target `main`, require CI to pass
+
+---
+
+## Known Bug Patterns (avoid repeating)
+
+### App Intents / Shortcuts — must set `openAppWhenRun = true`
+Any `AppIntent` that needs to **open the main app** MUST declare:
+```swift
+static let openAppWhenRun: Bool = true
+```
+Without it, the intent runs in the Shortcuts extension process and `UIApplication.shared.open()` is silently ignored — the app never opens.
+
+### In-app language switching — must use Bundle, not just `.locale` environment
+`.environment(\.locale, someLocale)` only affects date/number **formatting**. It does NOT change which `.strings` file SwiftUI uses for `Text("key")` lookups.
+
+To switch language at runtime without restart:
+1. Add a `bundle` computed property to `LanguageManager` that loads the correct `.lproj` bundle
+2. Create a custom `EnvironmentKey` (`localizedBundle`) and inject `languageManager.bundle`
+3. In every view, read `@Environment(\.localizedBundle) private var bundle` and use `Text("key", bundle: bundle)`

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(\.localizedBundle) private var bundle
     @State private var showSettings = false
     @State private var showFAQ = false
     @State private var showAbout = false
@@ -10,7 +11,7 @@ struct ProfileView: View {
             BackgroundGradientView()
             ScrollView {
                 VStack(spacing: 16) {
-                    Text("Profile")
+                    Text("Profile", bundle: bundle)
                         .font(AppFonts.title(28))
                         .foregroundStyle(AppColors.textPrimary)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -18,20 +19,20 @@ struct ProfileView: View {
 
                     menuCard(
                         icon: "gearshape",
-                        title: "Settings",
-                        subtitle: "Language, notifications, appearance"
+                        title: String(localized: "Settings", bundle: bundle),
+                        subtitle: String(localized: "Language, notifications, appearance", bundle: bundle)
                     ) { showSettings = true }
 
                     menuCard(
                         icon: "questionmark.circle",
-                        title: "FAQ",
-                        subtitle: "NFC binding, watering reminders"
+                        title: String(localized: "FAQ", bundle: bundle),
+                        subtitle: String(localized: "NFC binding, watering reminders", bundle: bundle)
                     ) { showFAQ = true }
 
                     menuCard(
                         icon: "info.circle",
-                        title: "About",
-                        subtitle: "Version 1.0 · Plant ID"
+                        title: String(localized: "About", bundle: bundle),
+                        subtitle: String(localized: "Version 1.0 · Plant ID", bundle: bundle)
                     ) { showAbout = true }
                 }
                 .padding(.horizontal, 20)
@@ -52,10 +53,10 @@ struct ProfileView: View {
                     .foregroundStyle(AppColors.textPrimary)
                     .frame(width: 36)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(title)
+                    Text(verbatim: title)
                         .font(AppFonts.headline())
                         .foregroundStyle(AppColors.textPrimary)
-                    Text(subtitle)
+                    Text(verbatim: subtitle)
                         .font(AppFonts.caption())
                         .foregroundStyle(AppColors.textSecondary)
                 }
@@ -72,32 +73,33 @@ struct ProfileView: View {
 
 private struct FAQSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.localizedBundle) private var bundle
 
     var body: some View {
         NavigationStack {
             List {
-                Section("NFC Tags") {
+                Section(String(localized: "NFC Tags", bundle: bundle)) {
                     faqItem(
-                        q: "How do I bind an NFC tag to a plant?",
-                        a: "Tap + on the home screen, then scan your NFC tag on the NFC scan page before creating your plant."
+                        q: String(localized: "How do I bind an NFC tag to a plant?", bundle: bundle),
+                        a: String(localized: "Tap + on the home screen, then scan your NFC tag on the NFC scan page before creating your plant.", bundle: bundle)
                     )
                     faqItem(
-                        q: "What NFC tags are supported?",
-                        a: "Any NDEF-compatible NFC tag (e.g. NTAG215, NTAG213). Tap the + button and scan your tag first."
+                        q: String(localized: "What NFC tags are supported?", bundle: bundle),
+                        a: String(localized: "Any NDEF-compatible NFC tag (e.g. NTAG215, NTAG213). Tap the + button and scan your tag first.", bundle: bundle)
                     )
                 }
-                Section("Watering Reminders") {
+                Section(String(localized: "Watering Reminders", bundle: bundle)) {
                     faqItem(
-                        q: "How do reminders work?",
-                        a: "Daily notifications at 8 AM remind you of plants that need watering. Make sure notifications are enabled."
+                        q: String(localized: "How do reminders work?", bundle: bundle),
+                        a: String(localized: "Daily notifications at 8 AM remind you of plants that need watering. Make sure notifications are enabled.", bundle: bundle)
                     )
                 }
             }
-            .navigationTitle("FAQ")
+            .navigationTitle(Text("FAQ", bundle: bundle))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") { dismiss() }
+                    Button(String(localized: "Done", bundle: bundle)) { dismiss() }
                 }
             }
         }
@@ -105,8 +107,8 @@ private struct FAQSheet: View {
 
     private func faqItem(q: String, a: String) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(q).font(AppFonts.headline(15)).foregroundStyle(AppColors.textPrimary)
-            Text(a).font(AppFonts.body(14)).foregroundStyle(AppColors.textSecondary)
+            Text(verbatim: q).font(AppFonts.headline(15)).foregroundStyle(AppColors.textPrimary)
+            Text(verbatim: a).font(AppFonts.body(14)).foregroundStyle(AppColors.textSecondary)
         }
         .padding(.vertical, 4)
     }
@@ -114,6 +116,7 @@ private struct FAQSheet: View {
 
 private struct AboutSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.localizedBundle) private var bundle
 
     var body: some View {
         NavigationStack {
@@ -121,13 +124,13 @@ private struct AboutSheet: View {
                 Image(systemName: "leaf.fill")
                     .font(.system(size: 60))
                     .foregroundStyle(AppColors.textPrimary)
-                Text("Plant ID")
+                Text("Plant ID", bundle: bundle)
                     .font(AppFonts.title())
                     .foregroundStyle(AppColors.textPrimary)
-                Text("Version 1.0")
+                Text("Version 1.0", bundle: bundle)
                     .font(AppFonts.body())
                     .foregroundStyle(AppColors.textSecondary)
-                Text("Track your plants, log waterings, and never forget to water again.")
+                Text("Track your plants, log waterings, and never forget to water again.", bundle: bundle)
                     .font(AppFonts.body())
                     .foregroundStyle(AppColors.textSecondary)
                     .multilineTextAlignment(.center)
@@ -135,11 +138,11 @@ private struct AboutSheet: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(BackgroundGradientView())
-            .navigationTitle("About")
+            .navigationTitle(Text("About", bundle: bundle))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") { dismiss() }
+                    Button(String(localized: "Done", bundle: bundle)) { dismiss() }
                 }
             }
         }

@@ -6,6 +6,7 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(LanguageManager.self) private var languageManager
     @Environment(AppearanceManager.self) private var appearanceManager
+    @Environment(\.localizedBundle) private var bundle
 
     @AppStorage("notifications_enabled") private var notificationsEnabled: Bool = true
     @AppStorage("reminder_hour") private var reminderHour: Int = 8
@@ -27,56 +28,56 @@ struct SettingsView: View {
                 appearanceSection
                 dataSection
             }
-            .navigationTitle("Settings")
+            .navigationTitle(Text("Settings", bundle: bundle))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") { dismiss() }
+                    Button(String(localized: "Done", bundle: bundle)) { dismiss() }
                         .foregroundStyle(AppColors.primary)
                 }
             }
         }
-        .alert("Reset App Data?", isPresented: $showResetConfirmation) {
-            Button("Reset", role: .destructive) { resetAllData() }
-            Button("Cancel", role: .cancel) {}
+        .alert(String(localized: "Reset App Data?", bundle: bundle), isPresented: $showResetConfirmation) {
+            Button(String(localized: "Reset", bundle: bundle), role: .destructive) { resetAllData() }
+            Button(String(localized: "Cancel", bundle: bundle), role: .cancel) {}
         } message: {
-            Text("This will permanently delete all your plant data. This action cannot be undone.")
+            Text("This will permanently delete all your plant data. This action cannot be undone.", bundle: bundle)
         }
-        .alert("Reset Failed", isPresented: $showResetError) {
-            Button("OK", role: .cancel) {}
+        .alert(String(localized: "Reset Failed", bundle: bundle), isPresented: $showResetError) {
+            Button(String(localized: "Cancel", bundle: bundle), role: .cancel) {}
         } message: {
-            Text("Could not delete all plant data. Please try again.")
+            Text("Could not delete all plant data. Please try again.", bundle: bundle)
         }
-        .alert("Notifications Disabled", isPresented: $showPermissionDeniedAlert) {
-            Button("Open Settings") {
+        .alert(String(localized: "Notifications Disabled", bundle: bundle), isPresented: $showPermissionDeniedAlert) {
+            Button(String(localized: "Open Settings", bundle: bundle)) {
                 if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
             }
-            Button("Cancel", role: .cancel) {}
+            Button(String(localized: "Cancel", bundle: bundle), role: .cancel) {}
         } message: {
-            Text("Allow notifications in Settings to enable daily plant care reminders.")
+            Text("Allow notifications in Settings to enable daily plant care reminders.", bundle: bundle)
         }
     }
 
     // MARK: - Sections
 
     private var languageSection: some View {
-        Section(header: Text("LANGUAGE")) {
-            Picker("Language", selection: Binding(
+        Section(header: Text("LANGUAGE", bundle: bundle)) {
+            Picker(String(localized: "Language", bundle: bundle), selection: Binding(
                 get: { languageManager.languageCode },
                 set: { languageManager.languageCode = $0 }
             )) {
-                Text("English").tag("en")
-                Text("Chinese").tag("zh-Hans")
+                Text("English", bundle: bundle).tag("en")
+                Text("Chinese", bundle: bundle).tag("zh-Hans")
             }
             .pickerStyle(.segmented)
         }
     }
 
     private var notificationsSection: some View {
-        Section(header: Text("NOTIFICATIONS")) {
-            Toggle("Daily Reminder", isOn: Binding(
+        Section(header: Text("NOTIFICATIONS", bundle: bundle)) {
+            Toggle(String(localized: "Daily Reminder", bundle: bundle), isOn: Binding(
                 get: { notificationsEnabled },
                 set: { newValue in
                     if newValue {
@@ -91,7 +92,7 @@ struct SettingsView: View {
 
             if notificationsEnabled {
                 DatePicker(
-                    "Reminder Time",
+                    String(localized: "Reminder Time", bundle: bundle),
                     selection: Binding(
                         get: { reminderDate },
                         set: { newDate in
@@ -108,22 +109,22 @@ struct SettingsView: View {
     }
 
     private var appearanceSection: some View {
-        Section(header: Text("APPEARANCE")) {
-            Picker("Appearance", selection: Binding(
+        Section(header: Text("APPEARANCE", bundle: bundle)) {
+            Picker(String(localized: "Appearance", bundle: bundle), selection: Binding(
                 get: { appearanceManager.appearanceMode },
                 set: { appearanceManager.appearanceMode = $0 }
             )) {
-                Text("System").tag("system")
-                Text("Light").tag("light")
-                Text("Dark").tag("dark")
+                Text("System", bundle: bundle).tag("system")
+                Text("Light", bundle: bundle).tag("light")
+                Text("Dark", bundle: bundle).tag("dark")
             }
             .pickerStyle(.segmented)
         }
     }
 
     private var dataSection: some View {
-        Section(header: Text("DATA")) {
-            Button("Reset App Data") {
+        Section(header: Text("DATA", bundle: bundle)) {
+            Button(String(localized: "Reset App Data", bundle: bundle)) {
                 showResetConfirmation = true
             }
             .foregroundStyle(AppColors.danger)

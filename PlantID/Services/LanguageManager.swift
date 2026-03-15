@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SwiftUI
 
 @Observable
 final class LanguageManager {
@@ -22,5 +23,25 @@ final class LanguageManager {
 
     var locale: Locale {
         Locale(identifier: _languageCode)
+    }
+
+    /// Returns a Bundle pointing to the correct .lproj for the selected language.
+    /// Views should use Text("key", bundle: languageManager.bundle) for runtime switching.
+    var bundle: Bundle {
+        Bundle.main.path(forResource: _languageCode, ofType: "lproj")
+            .flatMap { Bundle(path: $0) } ?? .main
+    }
+}
+
+// MARK: - Environment Key
+
+struct LocalizedBundleKey: EnvironmentKey {
+    static let defaultValue: Bundle = .main
+}
+
+extension EnvironmentValues {
+    var localizedBundle: Bundle {
+        get { self[LocalizedBundleKey.self] }
+        set { self[LocalizedBundleKey.self] = newValue }
     }
 }

@@ -4,6 +4,7 @@ import SwiftData
 struct HomeView: View {
     @Environment(AppRouter.self) private var router
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.localizedBundle) private var bundle
 
     @State private var viewModel: HomeViewModel?
 
@@ -40,7 +41,7 @@ struct HomeView: View {
     private var headerRow: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Text("My Plants")
+                Text("My Plants", bundle: bundle)
                     .font(AppFonts.title(28))
                     .foregroundStyle(AppColors.textPrimary)
                 Text("\(viewModel?.alivePlants.count ?? 0) plants")
@@ -63,8 +64,8 @@ struct HomeView: View {
 
     private var tabPicker: some View {
         HStack(spacing: 0) {
-            tabButton(title: "Alive", index: 0)
-            tabButton(title: "Archived", index: 1)
+            tabButton(title: String(localized: "Alive", bundle: bundle), index: 0)
+            tabButton(title: String(localized: "Archived", bundle: bundle), index: 1)
         }
         .padding(.horizontal, 20)
         .padding(.bottom, 12)
@@ -75,7 +76,7 @@ struct HomeView: View {
         return Button {
             viewModel?.selectedTab = index
         } label: {
-            Text(title)
+            Text(verbatim: title)
                 .font(AppFonts.body())
                 .fontWeight(selected ? .semibold : .regular)
                 .foregroundStyle(selected ? AppColors.textPrimary : AppColors.textMuted)
@@ -118,10 +119,10 @@ struct HomeView: View {
             Image(systemName: "leaf")
                 .font(.system(size: 48))
                 .foregroundStyle(AppColors.textMuted)
-            Text("No plants yet")
+            Text("No plants yet", bundle: bundle)
                 .font(AppFonts.headline())
                 .foregroundStyle(AppColors.textSecondary)
-            Text("Tap + to add your first plant")
+            Text("Tap + to add your first plant", bundle: bundle)
                 .font(AppFonts.body())
                 .foregroundStyle(AppColors.textMuted)
             Spacer()

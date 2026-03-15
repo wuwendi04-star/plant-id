@@ -11,6 +11,10 @@ struct OpenPlantIntent: AppIntent {
         "Opens a specific plant's detail page in PlantID.",
         categoryName: "Plant Management"
     )
+    /// Required so that iOS opens the main app before running perform().
+    /// Without this, the intent runs in the Shortcuts extension process and
+    /// UIApplication.shared.open() is silently ignored.
+    static let openAppWhenRun: Bool = true
 
     /// The plant to open. Shortcuts shows a picker populated by `PlantEntityQuery`.
     @Parameter(title: "Plant")

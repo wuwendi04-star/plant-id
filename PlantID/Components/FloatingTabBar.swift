@@ -3,16 +3,17 @@ import SwiftUI
 struct FloatingTabBar: View {
     @Binding var selected: TabDestination
     let onAddPlant: () -> Void
+    @Environment(\.localizedBundle) private var bundle
 
     var body: some View {
         HStack(spacing: 0) {
-            tabButton(destination: .home, icon: "house.fill", label: "Home")
+            tabButton(destination: .home, icon: "house.fill", label: String(localized: "Home", bundle: bundle))
             Spacer()
             addButton()
             Spacer()
-            tabButton(destination: .care, icon: "drop.fill", label: "Care")
+            tabButton(destination: .care, icon: "drop.fill", label: String(localized: "Care", bundle: bundle))
             Spacer()
-            tabButton(destination: .profile, icon: "person.fill", label: "Profile")
+            tabButton(destination: .profile, icon: "person.fill", label: String(localized: "Profile", bundle: bundle))
         }
         .padding(.horizontal, 24)
         .padding(.vertical, 12)

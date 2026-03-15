@@ -28,6 +28,7 @@ struct PlantIDApp: App {
                 .environment(languageManager)
                 .environment(appearanceManager)
                 .environment(\.locale, languageManager.locale)
+                .environment(\.localizedBundle, languageManager.bundle)
                 .preferredColorScheme(appearanceManager.colorScheme)
                 .task {
                     await setupApp()

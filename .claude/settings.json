@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/kilson/Documents/GitHub/plant-id/.claude/hooks/stop-quality-gate.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
